@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Daily Progress Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .row-done {
+            background-color: #ecfdf5 !important; /* Light emerald green */
+        }
+        .tab-active {
+            color: #6366f1;
+            border-bottom: 2px solid #6366f1;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <!-- Header Section -->
+        <header class="mb-6 flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <div class="flex-grow">
+                <div class="flex items-center justify-between mb-1">
+                    <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">DSA Mastery</h1>
+                    <div class="flex gap-2 lg:hidden">
+                        <button onclick="switchTab('tracker')" class="p-2 text-slate-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <button onclick="switchTab('analytics')" class="p-2 text-slate-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    </div>
+                </div>
+                <nav class="flex gap-6 mt-4 border-b border-slate-200">
+                    <button onclick="switchTab('tracker')" id="tab-tracker" class="pb-3 text-sm font-bold tracking-wide transition-all tab-active uppercase">Tracker</button>
+                    <button onclick="switchTab('analytics')" id="tab-analytics" class="pb-3 text-sm font-bold tracking-wide transition-all text-slate-400 uppercase hover:text-slate-600">Analytics</button>
+                </nav>
+            </div>
+            
+            <div class="glass-card p-5 rounded-2xl shadow-sm min-w-[320px]">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-bold text-slate-600">Progress</span>
+                    <span id="progress-text" class="text-sm font-extrabold text-indigo-600">0%</span>
+                </div>
+                <div class="w-full bg-slate-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-700 ease-out" style="width: 0%"></div>
+                </div>
+                <p id="stats-detail" class="text-[10px] font-bold text-slate-400 mt-2 text-right uppercase tracking-widest">0 / 0 Solved</p>
+            </div>
+        </header>
+
+        <!-- TRACKER VIEW -->
+        <div id="view-tracker">
+            <!-- Toolbar -->
+            <div class="mb-6 flex flex-col md:flex-row gap-4 items-center">
+                <div class="relative flex-grow w-full">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </span>
+                    <input type="text" id="search-input" placeholder="Search problems, companies..." class="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm shadow-sm transition-all">
+                </div>
+                <select id="topic-filter" class="w-full md:w-auto px-4 py-2.5 bg-white border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold text-slate-600 cursor-pointer shadow-sm">
+                    <option value="all">All Topics</option>
+                </select>
+                <div class="flex gap-2 shrink-0">
+                    <label class="p-2.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="Import Excel">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                        <input type="file" id="excel-import" class="hidden" accept=".xlsx, .xls, .csv">
+                    </label>
+                    <button onclick="exportToExcel()" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="Export Excel">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </button>
+                    <button onclick="clearAllData()" class="p-2.5 bg-white border border-slate-200 rounded-xl text-rose-400 hover:text-rose-600 hover:border-rose-600 transition-all shadow-sm" title="Reset Tracker">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Table -->
+            <div class="glass-card rounded-2xl shadow-sm overflow-hidden border border-slate-200">
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50/80">
+                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center w-16 border-b border-slate-100">Status</th>
+                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest w-28 border-b border-slate-100">Topic</th>
+                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">Problem</th>
+                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">Companies</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body" class="divide-y divide-slate-100"></tbody>
+                    </table>
+                </div>
+                <div id="no-results" class="hidden py-20 text-center text-slate-400"><p class="font-bold">No matches found.</p></div>
+            </div>
+        </div>
+
+        <!-- ANALYTICS VIEW -->
+        <div id="view-analytics" class="hidden space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Time Stats -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Activity Summary</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-slate-600">This Week</span>
+                            <span id="stat-week" class="text-lg font-bold text-indigo-600">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-slate-600">This Month</span>
+                            <span id="stat-month" class="text-lg font-bold text-indigo-600">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-slate-600">This Year</span>
+                            <span id="stat-year" class="text-lg font-bold text-indigo-600">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Breakdown -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm md:col-span-2">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Topic Mastery Distribution</h3>
+                    <div id="topic-chart" class="space-y-3 max-h-[180px] overflow-y-auto custom-scrollbar pr-2">
+                        <!-- Chart generated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity List -->
+            <div class="glass-card p-6 rounded-2xl shadow-sm">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Recent History</h3>
+                <div id="history-list" class="space-y-2">
+                    <!-- History generated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-8 text-center text-slate-300 text-[10px] pb-8 uppercase tracking-widest">
+            Local Persistence Enabled • Auto-Saving Date Timestamps
+        </footer>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-2xl translate-y-20 transition-all duration-300 pointer-events-none opacity-0 flex items-center gap-3 z-50 text-sm font-bold">
+        <span id="toast-message"></span>
+    </div>
+
+    <script>
+        const defaultProblems = [
+            { id: "def-1", topic: "Arrays", title: "Maximum and Minimum Element", companies: ["Amazon", "Google", "Microsoft"], link: "https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/" },
+            { id: "def-2", topic: "Arrays", title: "Reverse the Array", companies: ["Infosys"], link: "https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/" },
+            { id: "def-3", topic: "Arrays", title: "Maximum Subarray (Kadane's)", companies: ["Facebook", "Microsoft"], link: "https://leetcode.com/problems/maximum-subarray/" },
+            { id: "def-4", topic: "Arrays", title: "Contains Duplicate", companies: ["Amazon"], link: "https://leetcode.com/problems/contains-duplicate/" },
+            { id: "def-5", topic: "Strings", title: "Valid Palindrome", companies: ["Facebook"], link: "https://leetcode.com/problems/valid-palindrome/" }
+        ];
+
+        let dsaProblems = JSON.parse(localStorage.getItem('dsaTrackerQuestions')) || defaultProblems;
+        // completionData is now an object: { id: { date: "ISOString" } }
+        let completionData = JSON.parse(localStorage.getItem('dsaTrackerCompletionData')) || {};
+
+        const tableBody = document.getElementById('table-body');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const statsDetail = document.getElementById('stats-detail');
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 3000);
+        }
+
+        function switchTab(tab) {
+            const views = ['tracker', 'analytics'];
+            views.forEach(v => {
+                document.getElementById(`view-${v}`).classList.toggle('hidden', v !== tab);
+                document.getElementById(`tab-${v}`).classList.toggle('tab-active', v === tab);
+                document.getElementById(`tab-${v}`).classList.toggle('text-slate-400', v !== tab);
+            });
+            if (tab === 'analytics') renderAnalytics();
+        }
+
+        function updateStats() {
+            const total = dsaProblems.length;
+            const completedCount = Object.keys(completionData).filter(id => dsaProblems.some(p => p.id === id)).length;
+            const percentage = total === 0 ? 0 : Math.round((completedCount / total) * 100);
+            
+            progressBar.style.width = percentage + '%';
+            progressText.innerText = percentage + '%';
+            statsDetail.innerText = `${completedCount} / ${total} Solved`;
+            
+            localStorage.setItem('dsaTrackerCompletionData', JSON.stringify(completionData));
+            localStorage.setItem('dsaTrackerQuestions', JSON.stringify(dsaProblems));
+        }
+
+        function toggleComplete(id) {
+            if (completionData[id]) {
+                delete completionData[id];
+            } else {
+                completionData[id] = { date: new Date().toISOString() };
+            }
+            updateStats();
+            renderTable();
+        }
+
+        function renderTable() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const selectedTopic = document.getElementById('topic-filter').value;
+
+            const filtered = dsaProblems.filter(p => {
+                const matchSearch = p.title.toLowerCase().includes(searchTerm) || 
+                                    p.companies.some(c => c.toLowerCase().includes(searchTerm));
+                const matchTopic = selectedTopic === 'all' || p.topic === selectedTopic;
+                return matchSearch && matchTopic;
+            });
+
+            document.getElementById('no-results').classList.toggle('hidden', filtered.length > 0);
+            
+            tableBody.innerHTML = filtered.map(p => {
+                const meta = completionData[p.id];
+                const isDone = !!meta;
+                const formattedDate = isDone ? new Date(meta.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : '';
+
+                return `
+                    <tr class="transition-all ${isDone ? 'row-done' : ''}">
+                        <td class="px-6 py-4 text-center">
+                            <button onclick="toggleComplete('${p.id}')" class="group focus:outline-none">
+                                <div class="w-5 h-5 rounded border-2 ${isDone ? 'bg-indigo-600 border-indigo-600' : 'border-slate-300'} flex items-center justify-center transition-all group-hover:scale-110">
+                                    ${isDone ? '<svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>' : ''}
+                                </div>
+                            </button>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-white border border-slate-200 text-slate-500 uppercase">
+                                ${p.topic}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex flex-col">
+                                <a href="${p.link}" target="_blank" class="text-sm font-bold ${isDone ? 'text-emerald-800' : 'text-slate-800'} hover:text-indigo-600 transition-colors">
+                                    ${p.title}
+                                </a>
+                                ${isDone ? `<span class="text-[9px] font-bold text-emerald-600 uppercase mt-0.5">Done on ${formattedDate}</span>` : ''}
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex flex-wrap gap-1">
+                                ${p.companies.map(c => `<span class="px-1.5 py-0.5 rounded bg-white/50 text-[9px] font-bold text-slate-400 border border-slate-100 uppercase">${c}</span>`).join('')}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderAnalytics() {
+            const now = new Date();
+            const dayMillis = 24 * 60 * 60 * 1000;
+            const weekAgo = new Date(now.getTime() - 7 * dayMillis);
+            
+            let weekCount = 0, monthCount = 0, yearCount = 0;
+            const topicStats = {};
+            const history = [];
+
+            Object.entries(completionData).forEach(([id, meta]) => {
+                const problem = dsaProblems.find(p => p.id === id);
+                if (!problem) return;
+
+                const d = new Date(meta.date);
+                if (d >= weekAgo) weekCount++;
+                if (d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear()) monthCount++;
+                if (d.getFullYear() === now.getFullYear()) yearCount++;
+
+                topicStats[problem.topic] = (topicStats[problem.topic] || 0) + 1;
+                history.push({ ...problem, date: d });
+            });
+
+            // Update Counts
+            document.getElementById('stat-week').innerText = weekCount;
+            document.getElementById('stat-month').innerText = monthCount;
+            document.getElementById('stat-year').innerText = yearCount;
+
+            // Update Topic Chart
+            const sortedTopics = Object.entries(topicStats).sort((a,b) => b[1] - a[1]);
+            const maxVal = Math.max(...Object.values(topicStats), 1);
+            
+            document.getElementById('topic-chart').innerHTML = sortedTopics.length ? sortedTopics.map(([name, count]) => `
+                <div>
+                    <div class="flex justify-between text-[10px] font-bold uppercase text-slate-500 mb-1">
+                        <span>${name}</span>
+                        <span>${count} Solved</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-indigo-400 h-full" style="width: ${(count/maxVal)*100}%"></div>
+                    </div>
+                </div>
+            `).join('') : '<p class="text-xs text-slate-400 italic">No topics mastered yet.</p>';
+
+            // Update History
+            history.sort((a,b) => b.date - a.date);
+            document.getElementById('history-list').innerHTML = history.slice(0, 5).map(h => `
+                <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="text-xs font-bold text-slate-700">${h.title}</span>
+                    <span class="text-[9px] font-extrabold text-slate-400 uppercase">${h.date.toLocaleDateString()}</span>
+                </div>
+            `).join('') || '<p class="text-xs text-slate-400 italic">Start solving to see your history.</p>';
+        }
+
+        function exportToExcel() {
+            const data = dsaProblems.map(p => ({
+                Status: completionData[p.id] ? 'DONE' : 'READY',
+                Completed_Date: completionData[p.id] ? new Date(completionData[p.id].date).toLocaleDateString() : 'N/A',
+                Topic: p.topic,
+                Problem: p.title,
+                Link: p.link,
+                Companies: p.companies.join(', ')
+            }));
+            const ws = XLSX.utils.json_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "DSA_Report");
+            XLSX.writeFile(wb, `DSA_Mastery_Report_${new Date().toISOString().slice(0,10)}.xlsx`);
+            showToast("Report Exported.");
+        }
+
+        // Duplicate prevention logic remains robust
+        function handleImport(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const data = new Uint8Array(event.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+                const json = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
+                
+                const existingKeys = new Set(dsaProblems.map(p => `${p.topic.toLowerCase()}|${p.title.toLowerCase()}`));
+                const imports = [];
+                let duplicates = 0;
+
+                json.forEach((row, i) => {
+                    const keys = Object.keys(row);
+                    const find = (names) => {
+                        const k = keys.find(key => names.includes(key.trim().toLowerCase()));
+                        return k ? row[k] : null;
+                    };
+                    const topic = (find(['category', 'topic', 'tag']) || "Other").trim();
+                    const title = (find(['problem', 'question', 'title']) || `P-${i}`).trim();
+                    if (existingKeys.has(`${topic.toLowerCase()}|${title.toLowerCase()}`)) return duplicates++;
+
+                    imports.push({
+                        id: `import-${Date.now()}-${i}`,
+                        topic, title,
+                        link: find(['link', 'url', 'problem link']) || "#",
+                        companies: String(find(['companies', 'company']) || "").split(/[,\s+]/).filter(Boolean)
+                    });
+                });
+
+                if (imports.length) {
+                    dsaProblems = [...dsaProblems, ...imports];
+                    updateTopicFilter(); updateStats(); renderTable();
+                    showToast(`${imports.length} added. ${duplicates} duplicates skipped.`);
+                } else showToast("No new questions found.");
+                e.target.value = "";
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        function clearAllData() {
+            if (confirm("This will erase all progress. Are you sure?")) {
+                localStorage.clear();
+                location.reload();
+            }
+        }
+
+        function updateTopicFilter() {
+            const topics = [...new Set(dsaProblems.map(p => p.topic))].sort();
+            document.getElementById('topic-filter').innerHTML = '<option value="all">All Topics</option>' + 
+                topics.map(t => `<option value="${t}">${t}</option>`).join('');
+        }
+
+        document.getElementById('search-input').addEventListener('input', renderTable);
+        document.getElementById('topic-filter').addEventListener('change', renderTable);
+        document.getElementById('excel-import').addEventListener('change', handleImport);
+
+        updateTopicFilter();
+        updateStats();
+        renderTable();
+    </script>
+</body>
+</html>
