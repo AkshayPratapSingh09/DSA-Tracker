@@ -30,11 +30,32 @@
             border-radius: 10px;
         }
         .row-done {
-            background-color: #ecfdf5 !important; /* Light emerald green */
+            background-color: #ecfdf5 !important;
         }
         .tab-active {
             color: #6366f1;
             border-bottom: 2px solid #6366f1;
+        }
+        .calendar-day {
+            min-height: 90px;
+            transition: all 0.2s;
+        }
+        .calendar-day:hover {
+            background-color: #f1f5f9;
+        }
+        .day-today {
+            background-color: #f5f3ff;
+            border: 1px solid #6366f1 !important;
+        }
+        .has-target::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #6366f1;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -46,20 +67,17 @@
             <div class="flex-grow">
                 <div class="flex items-center justify-between mb-1">
                     <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">DSA Mastery</h1>
-                    <div class="flex gap-2 lg:hidden">
-                        <button onclick="switchTab('tracker')" class="p-2 text-slate-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7" stroke-width="2" stroke-linecap="round"/></svg></button>
-                        <button onclick="switchTab('analytics')" class="p-2 text-slate-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-width="2" stroke-linecap="round"/></svg></button>
-                    </div>
                 </div>
                 <nav class="flex gap-6 mt-4 border-b border-slate-200">
                     <button onclick="switchTab('tracker')" id="tab-tracker" class="pb-3 text-sm font-bold tracking-wide transition-all tab-active uppercase">Tracker</button>
+                    <button onclick="switchTab('planner')" id="tab-planner" class="pb-3 text-sm font-bold tracking-wide transition-all text-slate-400 uppercase hover:text-slate-600">Daily Planner</button>
                     <button onclick="switchTab('analytics')" id="tab-analytics" class="pb-3 text-sm font-bold tracking-wide transition-all text-slate-400 uppercase hover:text-slate-600">Analytics</button>
                 </nav>
             </div>
             
             <div class="glass-card p-5 rounded-2xl shadow-sm min-w-[320px]">
                 <div class="flex justify-between items-center mb-2">
-                    <span class="text-sm font-bold text-slate-600">Progress</span>
+                    <span class="text-sm font-bold text-slate-600">Overall Progress</span>
                     <span id="progress-text" class="text-sm font-extrabold text-indigo-600">0%</span>
                 </div>
                 <div class="w-full bg-slate-200 rounded-full h-2.5">
@@ -71,26 +89,30 @@
 
         <!-- TRACKER VIEW -->
         <div id="view-tracker">
-            <!-- Toolbar -->
             <div class="mb-6 flex flex-col md:flex-row gap-4 items-center">
                 <div class="relative flex-grow w-full">
                     <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
                         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </span>
-                    <input type="text" id="search-input" placeholder="Search problems, companies..." class="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm shadow-sm transition-all">
+                    <input type="text" id="search-input" placeholder="Search by question, company, difficulty..." class="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm shadow-sm transition-all">
                 </div>
                 <select id="topic-filter" class="w-full md:w-auto px-4 py-2.5 bg-white border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold text-slate-600 cursor-pointer shadow-sm">
                     <option value="all">All Topics</option>
                 </select>
+                
+                <button id="today-filter-btn" onclick="toggleTodayFilter()" class="hidden shrink-0 px-4 py-2.5 border border-indigo-200 rounded-xl text-sm font-bold transition-all shadow-sm flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path></svg>
+                    Today's Target
+                </button>
+
                 <div class="flex gap-2 shrink-0">
-                    <label class="p-2.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="Import Excel">
+                    <button onclick="openImportModal()" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="Import Suite">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
-                        <input type="file" id="excel-import" class="hidden" accept=".xlsx, .xls, .csv">
-                    </label>
-                    <button onclick="exportToExcel()" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="Export Excel">
+                    </button>
+                    <button onclick="exportToExcel()" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="Export Progress">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     </button>
-                    <button onclick="clearAllData()" class="p-2.5 bg-white border border-slate-200 rounded-xl text-rose-400 hover:text-rose-600 hover:border-rose-600 transition-all shadow-sm" title="Reset Tracker">
+                    <button onclick="clearAllData()" class="p-2.5 bg-white border border-slate-200 rounded-xl text-rose-400 hover:text-rose-600 hover:border-rose-600 transition-all shadow-sm" title="Reset All Data">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                     </button>
                 </div>
@@ -105,167 +127,372 @@
                                 <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center w-16 border-b border-slate-100">Status</th>
                                 <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest w-28 border-b border-slate-100">Topic</th>
                                 <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">Problem</th>
-                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">Companies</th>
+                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">Details / Source</th>
                             </tr>
                         </thead>
                         <tbody id="table-body" class="divide-y divide-slate-100"></tbody>
                     </table>
                 </div>
-                <div id="no-results" class="hidden py-20 text-center text-slate-400"><p class="font-bold">No matches found.</p></div>
+                <div id="no-results" class="hidden py-20 text-center text-slate-400"><p class="font-bold">No results found.</p></div>
+            </div>
+        </div>
+
+        <!-- PLANNER VIEW -->
+        <div id="view-planner" class="hidden space-y-6">
+            <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-4">
+                    <button onclick="changeMonth(-1)" class="p-2 hover:bg-slate-200 rounded-lg transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    <h2 id="calendar-title" class="text-lg font-extrabold text-slate-800 uppercase tracking-wider">Loading...</h2>
+                    <button onclick="changeMonth(1)" class="p-2 hover:bg-slate-200 rounded-lg transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="grid grid-cols-7 border-b border-slate-100 bg-slate-50">
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sun</div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Mon</div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tue</div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Wed</div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Thu</div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Fri</div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sat</div>
+                </div>
+                <div id="calendar-grid" class="grid grid-cols-7 divide-x divide-y divide-slate-100"></div>
             </div>
         </div>
 
         <!-- ANALYTICS VIEW -->
         <div id="view-analytics" class="hidden space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Time Stats -->
                 <div class="glass-card p-6 rounded-2xl shadow-sm">
                     <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Activity Summary</h3>
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-semibold text-slate-600">This Week</span>
-                            <span id="stat-week" class="text-lg font-bold text-indigo-600">0</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-semibold text-slate-600">This Month</span>
-                            <span id="stat-month" class="text-lg font-bold text-indigo-600">0</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-semibold text-slate-600">This Year</span>
-                            <span id="stat-year" class="text-lg font-bold text-indigo-600">0</span>
-                        </div>
+                        <div class="flex justify-between items-center"><span class="text-sm font-semibold text-slate-600">This Week</span><span id="stat-week" class="text-lg font-bold text-indigo-600">0</span></div>
+                        <div class="flex justify-between items-center"><span class="text-sm font-semibold text-slate-600">This Month</span><span id="stat-month" class="text-lg font-bold text-indigo-600">0</span></div>
+                        <div class="flex justify-between items-center"><span class="text-sm font-semibold text-slate-600">This Year</span><span id="stat-year" class="text-lg font-bold text-indigo-600">0</span></div>
                     </div>
                 </div>
-
-                <!-- Topic Breakdown -->
                 <div class="glass-card p-6 rounded-2xl shadow-sm md:col-span-2">
-                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Topic Mastery Distribution</h3>
-                    <div id="topic-chart" class="space-y-3 max-h-[180px] overflow-y-auto custom-scrollbar pr-2">
-                        <!-- Chart generated by JS -->
-                    </div>
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Topic Mastery</h3>
+                    <div id="topic-chart" class="space-y-3 max-h-[180px] overflow-y-auto custom-scrollbar pr-2"></div>
                 </div>
             </div>
-
-            <!-- Recent Activity List -->
             <div class="glass-card p-6 rounded-2xl shadow-sm">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Recent History</h3>
-                <div id="history-list" class="space-y-2">
-                    <!-- History generated by JS -->
-                </div>
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Recent Activity</h3>
+                <div id="history-list" class="space-y-2"></div>
             </div>
         </div>
 
-        <footer class="mt-8 text-center text-slate-300 text-[10px] pb-8 uppercase tracking-widest">
-            Local Persistence Enabled • Auto-Saving Date Timestamps
+        <footer class="mt-8 text-center text-slate-300 text-[10px] pb-8 uppercase tracking-widest font-bold">
+            Data Persists Locally • Build V3.6
         </footer>
     </div>
 
-    <!-- Toast -->
+    <!-- IMPORT MODAL -->
+    <div id="import-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+        <div class="glass-card w-full max-w-xl rounded-2xl shadow-2xl p-6 flex flex-col">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-extrabold text-slate-800 tracking-tight">Streamlined Import</h3>
+                <button onclick="closeImportModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg></button>
+            </div>
+            
+            <div class="mb-6 p-4 bg-slate-50 border border-slate-100 rounded-xl">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Required Columns (CSV/JSON)</p>
+                <code class="text-[10px] font-mono text-indigo-600 break-all bg-white p-2 rounded block">ID,Category,Question,Problem Link,Companies,Difficulty,Status</code>
+            </div>
+
+            <div class="mb-6">
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Source Name</label>
+                <input type="text" id="import-source" placeholder="e.g. DSA sheet by YT" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold transition-all">
+            </div>
+
+            <div class="flex gap-4 border-b border-slate-100 mb-6">
+                <button onclick="switchImportType('file')" id="btn-import-file" class="pb-2 text-xs font-bold border-b-2 border-indigo-600 text-indigo-600 uppercase">CSV File</button>
+                <button onclick="switchImportType('json')" id="btn-import-json" class="pb-2 text-xs font-bold border-b-2 border-transparent text-slate-400 uppercase hover:text-slate-600">JSON Array</button>
+            </div>
+
+            <div id="section-import-file">
+                <label class="w-full flex flex-col items-center justify-center px-4 py-8 border-2 border-dashed border-slate-200 rounded-2xl cursor-pointer hover:border-indigo-400 hover:bg-indigo-50/30 transition-all">
+                    <svg class="w-10 h-10 text-slate-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                    <span id="file-label" class="text-xs font-semibold text-slate-500">Upload .csv file</span>
+                    <input type="file" id="import-file-input" class="hidden" accept=".csv">
+                </label>
+            </div>
+
+            <div id="section-import-json" class="hidden">
+                <textarea id="import-json-input" placeholder='[{"Category": "Arrays", "Question": "Two Sum", ...}]' class="w-full h-40 px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-[11px] font-mono custom-scrollbar resize-none"></textarea>
+            </div>
+
+            <div class="flex gap-3 mt-8">
+                <button onclick="executeImport()" class="flex-grow bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-all text-sm shadow-md">Import Questions</button>
+                <button onclick="closeImportModal()" class="px-6 py-3 border border-slate-200 font-bold rounded-xl text-slate-600 text-sm hover:bg-slate-50 transition-all">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TARGET MODAL -->
+    <div id="target-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+        <div class="glass-card w-full max-w-xl rounded-2xl shadow-2xl p-6 flex flex-col max-h-[90vh]">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-date-title" class="text-lg font-extrabold text-slate-800 tracking-tight">Set Daily Target</h3>
+                <button onclick="closeTargetModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg></button>
+            </div>
+            <input type="text" id="target-headline" placeholder="Day Headline" class="w-full mb-4 px-4 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold">
+            <div class="flex flex-col flex-grow min-h-0">
+                <p class="text-[10px] font-bold text-slate-400 uppercase mb-2">Add Questions</p>
+                <div class="relative mb-2">
+                    <input type="text" id="target-problem-search" placeholder="Search..." class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-100 rounded-lg text-xs outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-all">
+                    <span class="absolute left-3 top-2 text-slate-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2"/></svg></span>
+                </div>
+                <div id="search-results" class="flex-grow overflow-y-auto custom-scrollbar space-y-1 mb-4 border border-slate-100 rounded-lg p-2 bg-slate-50/50"></div>
+                <div class="border-t border-slate-100 pt-4">
+                    <p class="text-[10px] font-bold text-indigo-600 uppercase mb-2">Selected Targets</p>
+                    <div id="selected-targets" class="flex flex-wrap gap-2 max-h-24 overflow-y-auto"></div>
+                </div>
+            </div>
+            <div class="flex gap-3 mt-6">
+                <button onclick="saveDailyTargets()" class="flex-grow bg-indigo-600 text-white font-bold py-2.5 rounded-xl hover:bg-indigo-700 transition-all text-sm shadow-md">Save Plan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast UI -->
     <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-2xl translate-y-20 transition-all duration-300 pointer-events-none opacity-0 flex items-center gap-3 z-50 text-sm font-bold">
         <span id="toast-message"></span>
     </div>
 
     <script>
         const defaultProblems = [
-            { id: "def-1", topic: "Arrays", title: "Maximum and Minimum Element", companies: ["Amazon", "Google", "Microsoft"], link: "https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/" },
-            { id: "def-2", topic: "Arrays", title: "Reverse the Array", companies: ["Infosys"], link: "https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/" },
-            { id: "def-3", topic: "Arrays", title: "Maximum Subarray (Kadane's)", companies: ["Facebook", "Microsoft"], link: "https://leetcode.com/problems/maximum-subarray/" },
-            { id: "def-4", topic: "Arrays", title: "Contains Duplicate", companies: ["Amazon"], link: "https://leetcode.com/problems/contains-duplicate/" },
-            { id: "def-5", topic: "Strings", title: "Valid Palindrome", companies: ["Facebook"], link: "https://leetcode.com/problems/valid-palindrome/" }
+            { id: "def-1", topic: "Arrays", title: "Maximum and Minimum Element", companies: ["Amazon", "Google", "Microsoft"], link: "https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/", source: "Default", difficulty: "Easy" },
+            { id: "def-2", topic: "Arrays", title: "Reverse the Array", companies: ["Infosys"], link: "https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/", source: "Default", difficulty: "Easy" },
+            { id: "def-3", topic: "Arrays", title: "Maximum Subarray (Kadane's)", companies: ["Facebook", "Microsoft"], link: "https://leetcode.com/problems/maximum-subarray/", source: "Default", difficulty: "Medium" }
         ];
 
         let dsaProblems = JSON.parse(localStorage.getItem('dsaTrackerQuestions')) || defaultProblems;
-        // completionData is now an object: { id: { date: "ISOString" } }
         let completionData = JSON.parse(localStorage.getItem('dsaTrackerCompletionData')) || {};
+        let dailyTargets = JSON.parse(localStorage.getItem('dsaTrackerDailyTargets')) || {};
 
-        const tableBody = document.getElementById('table-body');
-        const progressBar = document.getElementById('progress-bar');
-        const progressText = document.getElementById('progress-text');
-        const statsDetail = document.getElementById('stats-detail');
+        let currentYear = new Date().getFullYear();
+        let currentMonth = new Date().getMonth();
+        let selectedDateForModal = null;
+        let selectedIdsForModal = [];
+        let isTodayFilterActive = false;
+        let activeImportType = 'file';
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
-            document.getElementById('toast-message').innerText = msg;
+            const toastMsg = document.getElementById('toast-message');
+            if (!toast || !toastMsg) return;
+            toastMsg.innerText = msg;
             toast.classList.remove('translate-y-20', 'opacity-0');
             setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 3000);
         }
 
         function switchTab(tab) {
-            const views = ['tracker', 'analytics'];
-            views.forEach(v => {
-                document.getElementById(`view-${v}`).classList.toggle('hidden', v !== tab);
-                document.getElementById(`tab-${v}`).classList.toggle('tab-active', v === tab);
-                document.getElementById(`tab-${v}`).classList.toggle('text-slate-400', v !== tab);
+            ['tracker', 'planner', 'analytics'].forEach(v => {
+                const view = document.getElementById(`view-${v}`);
+                const tabBtn = document.getElementById(`tab-${v}`);
+                if (view) view.classList.toggle('hidden', v !== tab);
+                if (tabBtn) {
+                    tabBtn.classList.toggle('tab-active', v === tab);
+                    tabBtn.classList.toggle('text-slate-400', v !== tab);
+                }
             });
             if (tab === 'analytics') renderAnalytics();
+            if (tab === 'planner') renderCalendar();
+            if (tab === 'tracker') { checkTodayTarget(); renderTable(); }
+        }
+
+        function openImportModal() { document.getElementById('import-modal')?.classList.remove('hidden'); }
+        function closeImportModal() { document.getElementById('import-modal')?.classList.add('hidden'); }
+        
+        function switchImportType(type) {
+            activeImportType = type;
+            const fileSection = document.getElementById('section-import-file');
+            const jsonSection = document.getElementById('section-import-json');
+            const fileBtn = document.getElementById('btn-import-file');
+            const jsonBtn = document.getElementById('btn-import-json');
+
+            if (fileSection) fileSection.classList.toggle('hidden', type !== 'file');
+            if (jsonSection) jsonSection.classList.toggle('hidden', type !== 'json');
+            
+            const activeC = "pb-2 text-xs font-bold border-b-2 border-indigo-600 text-indigo-600 uppercase";
+            const inactiveC = "pb-2 text-xs font-bold border-b-2 border-transparent text-slate-400 uppercase hover:text-slate-600";
+            
+            if (fileBtn) fileBtn.className = type === 'file' ? activeC : inactiveC;
+            if (jsonBtn) jsonBtn.className = type === 'json' ? activeC : inactiveC;
+        }
+
+        function executeImport() {
+            const sourceInput = document.getElementById('import-source');
+            const source = sourceInput?.value.trim() || "Imported";
+            
+            if (activeImportType === 'file') {
+                const fileInput = document.getElementById('import-file-input');
+                const file = fileInput?.files[0];
+                if (!file) return showToast("Select a CSV file.");
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const data = new Uint8Array(e.target.result);
+                        const workbook = XLSX.read(data, { type: 'array' });
+                        const json = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
+                        handleDataArray(json, source);
+                    } catch (err) { showToast("Error processing file."); }
+                };
+                reader.readAsArrayBuffer(file);
+            } else {
+                const jsonText = document.getElementById('import-json-input')?.value.trim();
+                if (!jsonText) return showToast("Paste JSON data first.");
+                
+                try {
+                    // Pre-process: Strip trailing semicolon, clean hidden chars, handle smart quotes
+                    let clean = jsonText.trim();
+                    if (clean.endsWith(';')) clean = clean.slice(0, -1).trim();
+                    
+                    clean = clean
+                        .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"') 
+                        .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'") 
+                        .replace(/\u00A0/g, ' ') 
+                        .replace(/[\u200B-\u200D\uFEFF]/g, '') 
+                        .replace(/,\s*([\]}])/g, '$1'); 
+                        
+                    const json = JSON.parse(clean);
+                    if (!Array.isArray(json)) throw new Error("Must be an array");
+                    handleDataArray(json, source);
+                } catch (e) { 
+                    showToast("JSON Error: Check for trailing semicolons or syntax issues."); 
+                }
+            }
+        }
+
+        function handleDataArray(data, source) {
+            const existingKeys = new Set(dsaProblems.map(p => `${p.topic.toLowerCase()}|${p.title.toLowerCase()}`));
+            const imports = [];
+            let duplicates = 0;
+
+            data.forEach((row, i) => {
+                const keys = Object.keys(row);
+                const findValue = (names) => {
+                    const foundKey = keys.find(k => names.includes(k.trim().toLowerCase()));
+                    return foundKey ? String(row[foundKey]).trim() : "";
+                };
+
+                const topic = findValue(['category', 'topic', 'cat']) || "General";
+                const title = findValue(['question', 'problem', 'title']) || `Problem ${i+1}`;
+                const link = findValue(['problem link', 'link', 'url']) || "#";
+                const companiesStr = findValue(['companies', 'company', 'asked in']) || "";
+                const difficulty = findValue(['difficulty', 'diff', 'level']) || "Medium";
+                const statusStr = findValue(['status', 'state']) || "";
+
+                if (existingKeys.has(`${topic.toLowerCase()}|${title.toLowerCase()}`)) {
+                    duplicates++;
+                    return;
+                }
+
+                const id = `import-${Date.now()}-${i}`;
+                let cleanCompanies = companiesStr
+                    .replace(/Interview Qs?/gi, '')
+                    .replace(/\+/g, ' ')
+                    .split(/\s+/)
+                    .map(c => c.trim())
+                    .filter(Boolean);
+
+                const problem = { id, topic, title, link, companies: cleanCompanies, difficulty, source };
+
+                if (statusStr.toLowerCase().includes('done') || statusStr.toLowerCase().includes('complete') || statusStr.toLowerCase() === 'y') {
+                    completionData[id] = { date: new Date().toISOString() };
+                }
+
+                imports.push(problem);
+                existingKeys.add(`${topic.toLowerCase()}|${title.toLowerCase()}`);
+            });
+
+            if (imports.length) {
+                dsaProblems = [...dsaProblems, ...imports];
+                updateTopicFilter(); updateStats(); renderTable();
+                showToast(`${imports.length} added. ${duplicates} skipped.`);
+                closeImportModal();
+                if (document.getElementById('import-json-input')) document.getElementById('import-json-input').value = "";
+            } else showToast("No new questions found.");
+        }
+
+        function toggleTodayFilter() {
+            isTodayFilterActive = !isTodayFilterActive;
+            const btn = document.getElementById('today-filter-btn');
+            if (btn) btn.className = isTodayFilterActive ? 'shrink-0 px-4 py-2.5 bg-indigo-600 text-white rounded-xl text-sm font-bold shadow-sm flex items-center gap-2' : 'shrink-0 px-4 py-2.5 border border-indigo-200 rounded-xl text-sm font-bold shadow-sm flex items-center gap-2';
+            renderTable();
+        }
+
+        function checkTodayTarget() {
+            const todayStr = new Date().toISOString().split('T')[0];
+            const hasTargets = dailyTargets[todayStr] && dailyTargets[todayStr].questionIds.length > 0;
+            const btn = document.getElementById('today-filter-btn');
+            if (btn) btn.classList.toggle('hidden', !hasTargets);
+            if (!hasTargets) isTodayFilterActive = false;
         }
 
         function updateStats() {
             const total = dsaProblems.length;
             const completedCount = Object.keys(completionData).filter(id => dsaProblems.some(p => p.id === id)).length;
             const percentage = total === 0 ? 0 : Math.round((completedCount / total) * 100);
-            
-            progressBar.style.width = percentage + '%';
-            progressText.innerText = percentage + '%';
-            statsDetail.innerText = `${completedCount} / ${total} Solved`;
-            
+            if (document.getElementById('progress-bar')) document.getElementById('progress-bar').style.width = percentage + '%';
+            if (document.getElementById('progress-text')) document.getElementById('progress-text').innerText = percentage + '%';
+            if (document.getElementById('stats-detail')) document.getElementById('stats-detail').innerText = `${completedCount} / ${total} Solved`;
             localStorage.setItem('dsaTrackerCompletionData', JSON.stringify(completionData));
             localStorage.setItem('dsaTrackerQuestions', JSON.stringify(dsaProblems));
+            localStorage.setItem('dsaTrackerDailyTargets', JSON.stringify(dailyTargets));
         }
 
         function toggleComplete(id) {
-            if (completionData[id]) {
-                delete completionData[id];
-            } else {
-                completionData[id] = { date: new Date().toISOString() };
-            }
-            updateStats();
-            renderTable();
+            if (completionData[id]) delete completionData[id];
+            else completionData[id] = { date: new Date().toISOString() };
+            updateStats(); renderTable();
         }
 
         function renderTable() {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
-            const selectedTopic = document.getElementById('topic-filter').value;
+            const searchTerm = document.getElementById('search-input')?.value.toLowerCase() || "";
+            const selectedTopic = document.getElementById('topic-filter')?.value || "all";
+            const todayStr = new Date().toISOString().split('T')[0];
+            const targetIds = (dailyTargets[todayStr] && isTodayFilterActive) ? dailyTargets[todayStr].questionIds : null;
 
             const filtered = dsaProblems.filter(p => {
-                const matchSearch = p.title.toLowerCase().includes(searchTerm) || 
-                                    p.companies.some(c => c.toLowerCase().includes(searchTerm));
-                const matchTopic = selectedTopic === 'all' || p.topic === selectedTopic;
-                return matchSearch && matchTopic;
+                const mSearch = p.title.toLowerCase().includes(searchTerm) || p.companies.some(c => c.toLowerCase().includes(searchTerm)) || (p.difficulty && p.difficulty.toLowerCase().includes(searchTerm));
+                const mTopic = selectedTopic === 'all' || p.topic === selectedTopic;
+                const mToday = !isTodayFilterActive || (targetIds && targetIds.includes(p.id));
+                return mSearch && mTopic && mToday;
             });
 
-            document.getElementById('no-results').classList.toggle('hidden', filtered.length > 0);
+            if (document.getElementById('no-results')) document.getElementById('no-results').classList.toggle('hidden', filtered.length > 0);
+            const tb = document.getElementById('table-body');
+            if (!tb) return;
             
-            tableBody.innerHTML = filtered.map(p => {
-                const meta = completionData[p.id];
-                const isDone = !!meta;
-                const formattedDate = isDone ? new Date(meta.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : '';
-
+            tb.innerHTML = filtered.map(p => {
+                const isDone = !!completionData[p.id];
+                const dateStr = isDone ? new Date(completionData[p.id].date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : '';
+                const d = (p.difficulty || "Medium").toLowerCase();
+                const dColor = d === 'easy' ? 'text-emerald-500 bg-emerald-50' : (d === 'hard' ? 'text-rose-500 bg-rose-50' : 'text-amber-500 bg-amber-50');
+                
                 return `
                     <tr class="transition-all ${isDone ? 'row-done' : ''}">
                         <td class="px-6 py-4 text-center">
-                            <button onclick="toggleComplete('${p.id}')" class="group focus:outline-none">
-                                <div class="w-5 h-5 rounded border-2 ${isDone ? 'bg-indigo-600 border-indigo-600' : 'border-slate-300'} flex items-center justify-center transition-all group-hover:scale-110">
+                            <button onclick="toggleComplete('${p.id}')" class="focus:outline-none">
+                                <div class="w-5 h-5 rounded border-2 ${isDone ? 'bg-indigo-600 border-indigo-600' : 'border-slate-300'} flex items-center justify-center transition-all">
                                     ${isDone ? '<svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>' : ''}
                                 </div>
                             </button>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-white border border-slate-200 text-slate-500 uppercase">
-                                ${p.topic}
-                            </span>
-                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap"><span class="px-2 py-0.5 rounded text-[9px] font-bold bg-white border border-slate-200 text-slate-500 uppercase">${p.topic}</span></td>
                         <td class="px-6 py-4">
                             <div class="flex flex-col">
-                                <a href="${p.link}" target="_blank" class="text-sm font-bold ${isDone ? 'text-emerald-800' : 'text-slate-800'} hover:text-indigo-600 transition-colors">
-                                    ${p.title}
-                                </a>
-                                ${isDone ? `<span class="text-[9px] font-bold text-emerald-600 uppercase mt-0.5">Done on ${formattedDate}</span>` : ''}
+                                <a href="${p.link}" target="_blank" class="text-sm font-bold ${isDone ? 'text-emerald-800' : 'text-slate-800'} hover:text-indigo-600 transition-colors">${p.title}</a>
+                                ${isDone ? `<span class="text-[9px] font-bold text-emerald-600 uppercase mt-0.5">Completed ${dateStr}</span>` : ''}
                             </div>
                         </td>
                         <td class="px-6 py-4">
-                            <div class="flex flex-wrap gap-1">
-                                ${p.companies.map(c => `<span class="px-1.5 py-0.5 rounded bg-white/50 text-[9px] font-bold text-slate-400 border border-slate-100 uppercase">${c}</span>`).join('')}
+                            <div class="flex flex-wrap gap-1 items-center">
+                                <span class="px-1.5 py-0.5 rounded text-[8px] font-black uppercase ${dColor}">${p.difficulty || 'Medium'}</span>
+                                ${p.source ? `<span class="px-1.5 py-0.5 rounded bg-indigo-50 text-[9px] font-bold text-indigo-500 border border-indigo-100 uppercase italic">${p.source}</span>` : ''}
+                                ${p.companies.map(c => `<span class="px-1.5 py-0.5 rounded bg-white/60 text-[9px] font-bold text-slate-400 border border-slate-100 uppercase">${c}</span>`).join('')}
                             </div>
                         </td>
                     </tr>
@@ -273,137 +500,147 @@
             }).join('');
         }
 
+        function changeMonth(dir) {
+            currentMonth += dir;
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+            else if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+            renderCalendar();
+        }
+
+        function renderCalendar() {
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            if (document.getElementById('calendar-title')) document.getElementById('calendar-title').innerText = `${monthNames[currentMonth]} ${currentYear}`;
+            let gHtml = '';
+            for (let i = 0; i < firstDay; i++) gHtml += `<div class="bg-slate-50/50"></div>`;
+            const todayISO = new Date().toISOString().split('T')[0];
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const date = new Date(currentYear, currentMonth, d);
+                const iso = date.toISOString().split('T')[0];
+                const tar = dailyTargets[iso];
+                const isT = iso === todayISO;
+                gHtml += `<div onclick="openTargetModal('${iso}')" class="calendar-day relative p-3 border-r border-b border-slate-100 cursor-pointer ${isT ? 'day-today' : ''} ${tar && tar.questionIds.length > 0 ? 'has-target' : ''}">
+                    <span class="text-xs font-extrabold ${isT ? 'text-indigo-600' : 'text-slate-400'}">${d}</span>
+                    ${tar ? `<div class="mt-1 text-[9px] font-bold text-slate-700 truncate">${tar.headline}</div>` : ''}
+                    ${tar && tar.questionIds.length > 0 ? `<div class="text-[8px] text-indigo-500 font-extrabold uppercase mt-1">${tar.questionIds.length} Target(s)</div>` : ''}
+                </div>`;
+            }
+            if (document.getElementById('calendar-grid')) document.getElementById('calendar-grid').innerHTML = gHtml;
+        }
+
+        function openTargetModal(date) {
+            selectedDateForModal = date;
+            const data = dailyTargets[date] || { headline: '', questionIds: [] };
+            selectedIdsForModal = [...data.questionIds];
+            if (document.getElementById('modal-date-title')) document.getElementById('modal-date-title').innerText = `Planner: ${new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })}`;
+            if (document.getElementById('target-headline')) document.getElementById('target-headline').value = data.headline;
+            document.getElementById('target-modal')?.classList.remove('hidden');
+            renderSelectedTargets(); renderSearchResults('');
+        }
+
+        function closeTargetModal() { document.getElementById('target-modal')?.classList.add('hidden'); }
+
+        function renderSearchResults(q) {
+            const rd = document.getElementById('search-results');
+            if (!rd) return;
+            if (q.length < 2) { rd.innerHTML = '<p class="text-[10px] text-slate-400 p-2 italic text-center">Search question...</p>'; return; }
+            const fl = dsaProblems.filter(p => p.title.toLowerCase().includes(q.toLowerCase())).slice(0, 8);
+            rd.innerHTML = fl.map(p => `<div onclick="addIdToModal('${p.id}')" class="p-2 hover:bg-white rounded cursor-pointer border border-transparent hover:border-slate-100 flex justify-between items-center transition-all"><span class="text-[11px] font-bold text-slate-700">${p.title}</span><span class="text-[9px] uppercase font-extrabold text-slate-300 bg-slate-100 px-1 rounded">${p.topic}</span></div>`).join('') || '<p class="text-xs text-slate-400 p-2">None.</p>';
+        }
+
+        function addIdToModal(id) { if (!selectedIdsForModal.includes(id)) { selectedIdsForModal.push(id); renderSelectedTargets(); } }
+        function removeIdFromModal(id) { selectedIdsForModal = selectedIdsForModal.filter(i => i !== id); renderSelectedTargets(); }
+
+        function renderSelectedTargets() {
+            const c = document.getElementById('selected-targets');
+            if (!c) return;
+            c.innerHTML = selectedIdsForModal.map(id => {
+                const p = dsaProblems.find(item => item.id === id);
+                if (!p) return '';
+                return `<div class="px-2 py-1 bg-indigo-50 border border-indigo-100 rounded text-[10px] font-bold text-indigo-600 flex items-center gap-1">${p.title} <button onclick="removeIdFromModal('${id}')" class="hover:text-rose-500"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"/></svg></button></div>`;
+            }).join('') || '<p class="text-[10px] text-slate-400 italic">No targets.</p>';
+        }
+
+        function saveDailyTargets() {
+            const head = document.getElementById('target-headline')?.value.trim();
+            if (selectedIdsForModal.length === 0 && !head) delete dailyTargets[selectedDateForModal];
+            else dailyTargets[selectedDateForModal] = { headline: head || "Session", questionIds: selectedIdsForModal };
+            updateStats(); renderCalendar(); closeTargetModal(); showToast("Plan saved."); checkTodayTarget();
+        }
+
         function renderAnalytics() {
             const now = new Date();
-            const dayMillis = 24 * 60 * 60 * 1000;
-            const weekAgo = new Date(now.getTime() - 7 * dayMillis);
-            
-            let weekCount = 0, monthCount = 0, yearCount = 0;
-            const topicStats = {};
+            const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+            let week = 0, month = 0, year = 0;
+            const tStats = {};
             const history = [];
 
             Object.entries(completionData).forEach(([id, meta]) => {
                 const problem = dsaProblems.find(p => p.id === id);
                 if (!problem) return;
-
                 const d = new Date(meta.date);
-                if (d >= weekAgo) weekCount++;
-                if (d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear()) monthCount++;
-                if (d.getFullYear() === now.getFullYear()) yearCount++;
-
-                topicStats[problem.topic] = (topicStats[problem.topic] || 0) + 1;
+                if (d >= weekAgo) week++;
+                if (d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear()) month++;
+                if (d.getFullYear() === now.getFullYear()) year++;
+                tStats[problem.topic] = (tStats[problem.topic] || 0) + 1;
                 history.push({ ...problem, date: d });
             });
 
-            // Update Counts
-            document.getElementById('stat-week').innerText = weekCount;
-            document.getElementById('stat-month').innerText = monthCount;
-            document.getElementById('stat-year').innerText = yearCount;
+            if (document.getElementById('stat-week')) document.getElementById('stat-week').innerText = week;
+            if (document.getElementById('stat-month')) document.getElementById('stat-month').innerText = month;
+            if (document.getElementById('stat-year')) document.getElementById('stat-year').innerText = year;
 
-            // Update Topic Chart
-            const sortedTopics = Object.entries(topicStats).sort((a,b) => b[1] - a[1]);
-            const maxVal = Math.max(...Object.values(topicStats), 1);
-            
-            document.getElementById('topic-chart').innerHTML = sortedTopics.length ? sortedTopics.map(([name, count]) => `
-                <div>
-                    <div class="flex justify-between text-[10px] font-bold uppercase text-slate-500 mb-1">
-                        <span>${name}</span>
-                        <span>${count} Solved</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-indigo-400 h-full" style="width: ${(count/maxVal)*100}%"></div>
-                    </div>
-                </div>
-            `).join('') : '<p class="text-xs text-slate-400 italic">No topics mastered yet.</p>';
+            const sorted = Object.entries(tStats).sort((a,b) => b[1] - a[1]);
+            const max = Math.max(...Object.values(tStats), 1);
+            if (document.getElementById('topic-chart')) {
+                document.getElementById('topic-chart').innerHTML = sorted.map(([n, c]) => `
+                    <div><div class="flex justify-between text-[10px] font-bold uppercase text-slate-500 mb-1"><span>${n}</span><span>${c} Solved</span></div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden"><div class="bg-indigo-400 h-full" style="width: ${(c/max)*100}%"></div></div></div>
+                `).join('') || '<p class="text-xs text-slate-400">No activity.</p>';
+            }
 
-            // Update History
             history.sort((a,b) => b.date - a.date);
-            document.getElementById('history-list').innerHTML = history.slice(0, 5).map(h => `
-                <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
-                    <span class="text-xs font-bold text-slate-700">${h.title}</span>
-                    <span class="text-[9px] font-extrabold text-slate-400 uppercase">${h.date.toLocaleDateString()}</span>
-                </div>
-            `).join('') || '<p class="text-xs text-slate-400 italic">Start solving to see your history.</p>';
+            if (document.getElementById('history-list')) {
+                document.getElementById('history-list').innerHTML = history.slice(0, 5).map(h => `
+                    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="text-xs font-bold text-slate-700">${h.title}</span>
+                        <span class="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest">${h.date.toLocaleDateString()}</span>
+                    </div>
+                `).join('') || '<p class="text-xs text-slate-400">Empty history.</p>';
+            }
         }
 
         function exportToExcel() {
             const data = dsaProblems.map(p => ({
-                Status: completionData[p.id] ? 'DONE' : 'READY',
-                Completed_Date: completionData[p.id] ? new Date(completionData[p.id].date).toLocaleDateString() : 'N/A',
-                Topic: p.topic,
-                Problem: p.title,
-                Link: p.link,
-                Companies: p.companies.join(', ')
+                ID: p.id, Category: p.topic, Question: p.title, "Problem Link": p.link, Companies: p.companies.join(' '), Difficulty: p.difficulty, Status: completionData[p.id] ? 'Done' : 'Pending'
             }));
             const ws = XLSX.utils.json_to_sheet(data);
             const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, "DSA_Report");
-            XLSX.writeFile(wb, `DSA_Mastery_Report_${new Date().toISOString().slice(0,10)}.xlsx`);
-            showToast("Report Exported.");
-        }
-
-        // Duplicate prevention logic remains robust
-        function handleImport(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                const data = new Uint8Array(event.target.result);
-                const workbook = XLSX.read(data, { type: 'array' });
-                const json = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
-                
-                const existingKeys = new Set(dsaProblems.map(p => `${p.topic.toLowerCase()}|${p.title.toLowerCase()}`));
-                const imports = [];
-                let duplicates = 0;
-
-                json.forEach((row, i) => {
-                    const keys = Object.keys(row);
-                    const find = (names) => {
-                        const k = keys.find(key => names.includes(key.trim().toLowerCase()));
-                        return k ? row[k] : null;
-                    };
-                    const topic = (find(['category', 'topic', 'tag']) || "Other").trim();
-                    const title = (find(['problem', 'question', 'title']) || `P-${i}`).trim();
-                    if (existingKeys.has(`${topic.toLowerCase()}|${title.toLowerCase()}`)) return duplicates++;
-
-                    imports.push({
-                        id: `import-${Date.now()}-${i}`,
-                        topic, title,
-                        link: find(['link', 'url', 'problem link']) || "#",
-                        companies: String(find(['companies', 'company']) || "").split(/[,\s+]/).filter(Boolean)
-                    });
-                });
-
-                if (imports.length) {
-                    dsaProblems = [...dsaProblems, ...imports];
-                    updateTopicFilter(); updateStats(); renderTable();
-                    showToast(`${imports.length} added. ${duplicates} duplicates skipped.`);
-                } else showToast("No new questions found.");
-                e.target.value = "";
-            };
-            reader.readAsArrayBuffer(file);
+            XLSX.utils.book_append_sheet(wb, ws, "DSA_Tracker");
+            XLSX.writeFile(wb, `DSA_Tracker_${new Date().toISOString().split('T')[0]}.xlsx`);
+            showToast("Exported.");
         }
 
         function clearAllData() {
-            if (confirm("This will erase all progress. Are you sure?")) {
-                localStorage.clear();
-                location.reload();
-            }
+            if (confirm("Reset everything?")) { localStorage.clear(); location.reload(); }
         }
 
         function updateTopicFilter() {
             const topics = [...new Set(dsaProblems.map(p => p.topic))].sort();
-            document.getElementById('topic-filter').innerHTML = '<option value="all">All Topics</option>' + 
-                topics.map(t => `<option value="${t}">${t}</option>`).join('');
+            const filter = document.getElementById('topic-filter');
+            if (filter) filter.innerHTML = '<option value="all">All Topics</option>' + topics.map(t => `<option value="${t}">${t}</option>`).join('');
         }
 
-        document.getElementById('search-input').addEventListener('input', renderTable);
-        document.getElementById('topic-filter').addEventListener('change', renderTable);
-        document.getElementById('excel-import').addEventListener('change', handleImport);
+        document.getElementById('search-input')?.addEventListener('input', renderTable);
+        document.getElementById('topic-filter')?.addEventListener('change', renderTable);
+        document.getElementById('target-problem-search')?.addEventListener('input', (e) => renderSearchResults(e.target.value));
+        document.getElementById('import-file-input')?.addEventListener('change', (e) => {
+            if (document.getElementById('file-label')) document.getElementById('file-label').innerText = e.target.files[0] ? e.target.files[0].name : "Upload .csv file";
+        });
 
-        updateTopicFilter();
-        updateStats();
-        renderTable();
+        window.onload = () => { updateTopicFilter(); updateStats(); renderTable(); checkTodayTarget(); renderCalendar(); };
     </script>
 </body>
 </html>
