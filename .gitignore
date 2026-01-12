@@ -1,5 +1,4 @@
 *.xlsx
-*.js
 *.py
 *.json
 node_modules
