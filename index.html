@@ -1,31 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSA Daily Progress Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
-        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        .row-done { background-color: #ecfdf5 !important; }
-        .tab-active { color: #6366f1; border-bottom: 2px solid #6366f1; }
-        .calendar-day { min-height: 90px; transition: all 0.2s; }
-        .calendar-day:hover { background-color: #f1f5f9; }
-        .day-today { background-color: #f5f3ff; border: 1px solid #6366f1 !important; }
-        .has-target::after { content: ''; position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; background-color: #6366f1; border-radius: 50%; }
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .animate-spin-fast { animation: spin 1s linear infinite; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .row-done {
+            background-color: #ecfdf5 !important;
+        }
+
+        .tab-active {
+            color: #6366f1;
+            border-bottom: 2px solid #6366f1;
+        }
+
+        .calendar-day {
+            min-height: 90px;
+            transition: all 0.2s;
+        }
+
+        .calendar-day:hover {
+            background-color: #f1f5f9;
+        }
+
+        .day-today {
+            background-color: #f5f3ff;
+            border: 1px solid #6366f1 !important;
+        }
+
+        .has-target::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #6366f1;
+            border-radius: 50%;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-fast {
+            animation: spin 1s linear infinite;
+        }
     </style>
 </head>
+
 <body class="min-h-screen p-4 md:p-8">
 
     <div class="max-w-6xl mx-auto">
@@ -36,21 +96,28 @@
                     <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">DSA Mastery</h1>
                 </div>
                 <nav class="flex gap-6 mt-4 border-b border-slate-200">
-                    <button onclick="switchTab('tracker')" id="tab-tracker" class="pb-3 text-sm font-bold tracking-wide transition-all tab-active uppercase">Tracker</button>
-                    <button onclick="switchTab('planner')" id="tab-planner" class="pb-3 text-sm font-bold tracking-wide transition-all text-slate-400 uppercase hover:text-slate-600">Daily Planner</button>
-                    <button onclick="switchTab('analytics')" id="tab-analytics" class="pb-3 text-sm font-bold tracking-wide transition-all text-slate-400 uppercase hover:text-slate-600">Analytics</button>
+                    <button onclick="switchTab('tracker')" id="tab-tracker"
+                        class="pb-3 text-sm font-bold tracking-wide transition-all tab-active uppercase">Tracker</button>
+                    <button onclick="switchTab('planner')" id="tab-planner"
+                        class="pb-3 text-sm font-bold tracking-wide transition-all text-slate-400 uppercase hover:text-slate-600">Daily
+                        Planner</button>
+                    <button onclick="switchTab('analytics')" id="tab-analytics"
+                        class="pb-3 text-sm font-bold tracking-wide transition-all text-slate-400 uppercase hover:text-slate-600">Analytics</button>
                 </nav>
             </div>
-            
+
             <div class="glass-card p-5 rounded-2xl shadow-sm min-w-[320px]">
                 <div class="flex justify-between items-center mb-2">
                     <span class="text-sm font-bold text-slate-600">Overall Progress</span>
                     <span id="progress-text" class="text-sm font-extrabold text-indigo-600">0%</span>
                 </div>
                 <div class="w-full bg-slate-200 rounded-full h-2.5">
-                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-700 ease-out" style="width: 0%"></div>
+                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-700 ease-out"
+                        style="width: 0%"></div>
                 </div>
-                <p id="stats-detail" class="text-[10px] font-bold text-slate-400 mt-2 text-right uppercase tracking-widest">0 / 0 Solved</p>
+                <p id="stats-detail"
+                    class="text-[10px] font-bold text-slate-400 mt-2 text-right uppercase tracking-widest">0 / 0 Solved
+                </p>
             </div>
         </header>
 
@@ -59,31 +126,64 @@
             <div class="mb-6 flex flex-col md:flex-row gap-4 items-center">
                 <div class="relative flex-grow w-full">
                     <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </span>
-                    <input type="text" id="search-input" placeholder="Search by question, company, difficulty..." class="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm shadow-sm transition-all">
+                    <input type="text" id="search-input" placeholder="Search by question, company, difficulty..."
+                        class="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm shadow-sm transition-all">
                 </div>
-                <select id="topic-filter" class="w-full md:w-auto px-4 py-2.5 bg-white border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold text-slate-600 cursor-pointer shadow-sm">
+                <select id="topic-filter"
+                    class="w-full md:w-auto px-4 py-2.5 bg-white border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold text-slate-600 cursor-pointer shadow-sm">
                     <option value="all">All Topics</option>
                 </select>
-                
-                <button id="today-filter-btn" onclick="toggleTodayFilter()" class="hidden shrink-0 px-4 py-2.5 border border-indigo-200 rounded-xl text-sm font-bold transition-all shadow-sm flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path></svg>
+
+                <button id="today-filter-btn" onclick="toggleTodayFilter()"
+                    class="hidden shrink-0 px-4 py-2.5 border border-indigo-200 rounded-xl text-sm font-bold transition-all shadow-sm flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
+                    </svg>
                     Today's Target
                 </button>
 
                 <div class="flex gap-2 shrink-0">
-                    <button onclick="openImportModal()" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="Import Suite">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                    <button onclick="openImportModal()"
+                        class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm"
+                        title="Import Suite">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                        </svg>
                     </button>
-                    <button onclick="openSettingsModal()" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="GitHub Cloud Sync">
-                        <svg id="settings-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <button onclick="openSettingsModal()"
+                        class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm"
+                        title="GitHub Cloud Sync">
+                        <svg id="settings-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
                     </button>
-                    <button onclick="exportToExcel()" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm" title="Export Progress">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <button onclick="exportToExcel()"
+                        class="p-2.5 bg-white border border-slate-200 rounded-xl hover:text-indigo-600 hover:border-indigo-600 transition-all shadow-sm"
+                        title="Export Progress">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
                     </button>
-                    <button onclick="clearAllData()" class="p-2.5 bg-white border border-slate-200 rounded-xl text-rose-400 hover:text-rose-600 hover:border-rose-600 transition-all shadow-sm" title="Reset All Data">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    <button onclick="clearAllData()"
+                        class="p-2.5 bg-white border border-slate-200 rounded-xl text-rose-400 hover:text-rose-600 hover:border-rose-600 transition-all shadow-sm"
+                        title="Reset All Data">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                            </path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -94,16 +194,26 @@
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="bg-slate-50/80">
-                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center w-16 border-b border-slate-100">Status</th>
-                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest w-28 border-b border-slate-100">Topic</th>
-                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">Problem</th>
-                                <th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">Details / Source</th>
+                                <th
+                                    class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center w-16 border-b border-slate-100">
+                                    Status</th>
+                                <th
+                                    class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest w-28 border-b border-slate-100">
+                                    Topic</th>
+                                <th
+                                    class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">
+                                    Problem</th>
+                                <th
+                                    class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">
+                                    Details / Source</th>
                             </tr>
                         </thead>
                         <tbody id="table-body" class="divide-y divide-slate-100"></tbody>
                     </table>
                 </div>
-                <div id="no-results" class="hidden py-20 text-center text-slate-400"><p class="font-bold">No results found.</p></div>
+                <div id="no-results" class="hidden py-20 text-center text-slate-400">
+                    <p class="font-bold">No results found.</p>
+                </div>
             </div>
         </div>
 
@@ -111,20 +221,34 @@
         <div id="view-planner" class="hidden space-y-6">
             <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-4">
-                    <button onclick="changeMonth(-1)" class="p-2 hover:bg-slate-200 rounded-lg transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-                    <h2 id="calendar-title" class="text-lg font-extrabold text-slate-800 uppercase tracking-wider">Loading...</h2>
-                    <button onclick="changeMonth(1)" class="p-2 hover:bg-slate-200 rounded-lg transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    <button onclick="changeMonth(-1)" class="p-2 hover:bg-slate-200 rounded-lg transition-all"><svg
+                            class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                    <h2 id="calendar-title" class="text-lg font-extrabold text-slate-800 uppercase tracking-wider">
+                        Loading...</h2>
+                    <button onclick="changeMonth(1)" class="p-2 hover:bg-slate-200 rounded-lg transition-all"><svg
+                            class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
                 </div>
             </div>
             <div class="glass-card rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                 <div class="grid grid-cols-7 border-b border-slate-100 bg-slate-50">
-                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sun</div>
-                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Mon</div>
-                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tue</div>
-                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Wed</div>
-                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Thu</div>
-                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Fri</div>
-                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sat</div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sun
+                    </div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Mon
+                    </div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tue
+                    </div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Wed
+                    </div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Thu
+                    </div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Fri
+                    </div>
+                    <div class="py-3 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sat
+                    </div>
                 </div>
                 <div id="calendar-grid" class="grid grid-cols-7 divide-x divide-y divide-slate-100"></div>
             </div>
@@ -136,9 +260,15 @@
                 <div class="glass-card p-6 rounded-2xl shadow-sm">
                     <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Activity Summary</h3>
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center"><span class="text-sm font-semibold text-slate-600">This Week</span><span id="stat-week" class="text-lg font-bold text-indigo-600">0</span></div>
-                        <div class="flex justify-between items-center"><span class="text-sm font-semibold text-slate-600">This Month</span><span id="stat-month" class="text-lg font-bold text-indigo-600">0</span></div>
-                        <div class="flex justify-between items-center"><span class="text-sm font-semibold text-slate-600">This Year</span><span id="stat-year" class="text-lg font-bold text-indigo-600">0</span></div>
+                        <div class="flex justify-between items-center"><span
+                                class="text-sm font-semibold text-slate-600">This Week</span><span id="stat-week"
+                                class="text-lg font-bold text-indigo-600">0</span></div>
+                        <div class="flex justify-between items-center"><span
+                                class="text-sm font-semibold text-slate-600">This Month</span><span id="stat-month"
+                                class="text-lg font-bold text-indigo-600">0</span></div>
+                        <div class="flex justify-between items-center"><span
+                                class="text-sm font-semibold text-slate-600">This Year</span><span id="stat-year"
+                                class="text-lg font-bold text-indigo-600">0</span></div>
                     </div>
                 </div>
                 <div class="glass-card p-6 rounded-2xl shadow-sm md:col-span-2">
@@ -158,28 +288,43 @@
     </div>
 
     <!-- IMPORT MODAL -->
-    <div id="import-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+    <div id="import-modal"
+        class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
         <div class="glass-card w-full max-w-xl rounded-2xl shadow-2xl p-6 flex flex-col">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-xl font-extrabold text-slate-800 tracking-tight">Import Suite</h3>
-                <button onclick="closeImportModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg></button>
+                <button onclick="closeImportModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-6 h-6"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" />
+                    </svg></button>
             </div>
-            
+
             <div class="mb-6">
-                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Source Name</label>
-                <input type="text" id="import-source" placeholder="e.g. DSA sheet by YT" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold transition-all">
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Source
+                    Name</label>
+                <input type="text" id="import-source" placeholder="e.g. DSA sheet by YT"
+                    class="w-full px-4 py-2.5 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold transition-all">
             </div>
 
             <div class="flex gap-4 border-b border-slate-100 mb-6">
-                <button onclick="switchImportType('file')" id="btn-import-file" class="pb-2 text-xs font-bold border-b-2 border-indigo-600 text-indigo-600 uppercase transition-all">CSV</button>
-                <button onclick="switchImportType('json')" id="btn-import-json" class="pb-2 text-xs font-bold border-b-2 border-transparent text-slate-400 uppercase hover:text-slate-600 transition-all">JSON</button>
-                <button onclick="switchImportType('manual')" id="btn-import-manual" class="pb-2 text-xs font-bold border-b-2 border-transparent text-slate-400 uppercase hover:text-slate-600 transition-all">Manual Entry</button>
+                <button onclick="switchImportType('file')" id="btn-import-file"
+                    class="pb-2 text-xs font-bold border-b-2 border-indigo-600 text-indigo-600 uppercase transition-all">CSV</button>
+                <button onclick="switchImportType('json')" id="btn-import-json"
+                    class="pb-2 text-xs font-bold border-b-2 border-transparent text-slate-400 uppercase hover:text-slate-600 transition-all">JSON</button>
+                <button onclick="switchImportType('manual')" id="btn-import-manual"
+                    class="pb-2 text-xs font-bold border-b-2 border-transparent text-slate-400 uppercase hover:text-slate-600 transition-all">Manual
+                    Entry</button>
             </div>
 
             <!-- File Import -->
             <div id="section-import-file">
-                <label class="w-full flex flex-col items-center justify-center px-4 py-8 border-2 border-dashed border-slate-200 rounded-2xl cursor-pointer hover:border-indigo-400 hover:bg-indigo-50/30 transition-all">
-                    <svg class="w-10 h-10 text-slate-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <label
+                    class="w-full flex flex-col items-center justify-center px-4 py-8 border-2 border-dashed border-slate-200 rounded-2xl cursor-pointer hover:border-indigo-400 hover:bg-indigo-50/30 transition-all">
+                    <svg class="w-10 h-10 text-slate-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                        </path>
+                    </svg>
                     <span id="file-label" class="text-xs font-semibold text-slate-500">Upload .csv file</span>
                     <input type="file" id="import-file-input" class="hidden" accept=".csv">
                 </label>
@@ -187,7 +332,8 @@
 
             <!-- JSON Import -->
             <div id="section-import-json" class="hidden">
-                <textarea id="import-json-input" placeholder='[{"Category": "Arrays", "Question": "Two Sum", ...}]' class="w-full h-40 px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-[11px] font-mono custom-scrollbar resize-none"></textarea>
+                <textarea id="import-json-input" placeholder='[{"Category": "Arrays", "Question": "Two Sum", ...}]'
+                    class="w-full h-40 px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-[11px] font-mono custom-scrollbar resize-none"></textarea>
             </div>
 
             <!-- Manual Entry -->
@@ -195,16 +341,19 @@
                 <div class="grid grid-cols-2 gap-3">
                     <div class="col-span-2">
                         <label class="text-[9px] font-bold text-slate-400 uppercase mb-1 block">Question Title</label>
-                        <input type="text" id="manual-title" placeholder="e.g. Reverse a Linked List" class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        <input type="text" id="manual-title" placeholder="e.g. Reverse a Linked List"
+                            class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
                     <div>
                         <label class="text-[9px] font-bold text-slate-400 uppercase mb-1 block">Topic / Category</label>
-                        <input list="topic-suggestions" id="manual-category" placeholder="Arrays, DP..." class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        <input list="topic-suggestions" id="manual-category" placeholder="Arrays, DP..."
+                            class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                         <datalist id="topic-suggestions"></datalist>
                     </div>
                     <div>
                         <label class="text-[9px] font-bold text-slate-400 uppercase mb-1 block">Difficulty</label>
-                        <select id="manual-difficulty" class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                        <select id="manual-difficulty"
+                            class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
                             <option value="Easy">Easy</option>
                             <option value="Medium" selected>Medium</option>
                             <option value="Hard">Hard</option>
@@ -212,58 +361,122 @@
                     </div>
                     <div class="col-span-2">
                         <label class="text-[9px] font-bold text-slate-400 uppercase mb-1 block">Problem URL</label>
-                        <input type="url" id="manual-link" placeholder="https://leetcode.com/problems/..." class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        <input type="url" id="manual-link" placeholder="https://leetcode.com/problems/..."
+                            class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
                     <div class="col-span-2">
                         <label class="text-[9px] font-bold text-slate-400 uppercase mb-1 block">Company Tags</label>
-                        <input type="text" id="manual-companies" placeholder="Amazon, Google, Microsoft..." class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        <input type="text" id="manual-companies" placeholder="Amazon, Google, Microsoft..."
+                            class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
                 </div>
             </div>
 
             <div class="flex gap-3 mt-8">
-                <button onclick="executeImport()" class="flex-grow bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-all text-sm shadow-md">Add Question(s)</button>
-                <button onclick="closeImportModal()" class="px-6 py-3 border border-slate-200 font-bold rounded-xl text-slate-600 text-sm hover:bg-slate-50 transition-all">Cancel</button>
+                <button onclick="executeImport()"
+                    class="flex-grow bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-all text-sm shadow-md">Add
+                    Question(s)</button>
+                <button onclick="closeImportModal()"
+                    class="px-6 py-3 border border-slate-200 font-bold rounded-xl text-slate-600 text-sm hover:bg-slate-50 transition-all">Cancel</button>
             </div>
         </div>
     </div>
 
     <!-- GITHUB MODAL -->
-    <div id="settings-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+    <div id="settings-modal"
+        class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
         <div class="glass-card w-full max-w-md rounded-3xl shadow-2xl p-8 flex flex-col">
             <div class="flex justify-between items-center mb-6">
-                <div class="flex items-center gap-3"><div class="p-2 bg-indigo-100 rounded-lg text-indigo-600"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div><h3 class="text-xl font-extrabold text-slate-800">GitHub Sync</h3></div>
-                <button onclick="closeSettingsModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg></button>
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-indigo-100 rounded-lg text-indigo-600"><svg class="w-6 h-6" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                        </svg></div>
+                    <h3 class="text-xl font-extrabold text-slate-800">GitHub Sync</h3>
+                </div>
+                <button onclick="closeSettingsModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-6 h-6"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" />
+                    </svg></button>
             </div>
             <div class="space-y-4">
-                <div><label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">GitHub Token</label><input type="password" id="gh-token" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
-                <div class="grid grid-cols-2 gap-3">
-                    <div><label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Owner</label><input type="text" id="gh-owner" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
-                    <div><label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Repo Name</label><input type="text" id="gh-repo" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
+                <div><label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">GitHub
+                        Token</label><input type="password" id="gh-token"
+                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                 </div>
-                <div><label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">File Path</label><input type="text" id="gh-path" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div><label
+                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Owner</label><input
+                            type="text" id="gh-owner"
+                            class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                    </div>
+                    <div><label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Repo
+                            Name</label><input type="text" id="gh-repo"
+                            class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                    </div>
+                </div>
+                <div><label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">File
+                        Path (CSV)</label><input type="text" id="gh-path" placeholder="dsa_sheet.csv"
+                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                </div>
+                <div><label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Targets
+                        File (JSON)</label><input type="text" id="gh-targets-path" placeholder="dailyTargets.json"
+                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                </div>
             </div>
             <div class="grid grid-cols-2 gap-3 mt-8">
-                <button onclick="fetchFromGitHub()" id="btn-pull" class="flex items-center justify-center gap-2 bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition-all text-sm shadow-md">Pull Data</button>
-                <button onclick="pushToGitHub()" id="btn-push" class="flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-all text-sm shadow-md">Push Data</button>
+                <button onclick="fetchFromGitHub()" id="btn-pull"
+                    class="flex items-center justify-center gap-2 bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition-all text-sm shadow-md">Pull
+                    Data</button>
+                <button onclick="pushToGitHub()" id="btn-push"
+                    class="flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-all text-sm shadow-md">Push
+                    Data</button>
             </div>
-            <button onclick="saveGitHubSettings()" class="mt-3 w-full border border-slate-200 text-slate-600 font-bold py-2.5 rounded-xl hover:bg-slate-50 transition-all text-xs">Save Credentials</button>
+            <button onclick="saveGitHubSettings()"
+                class="mt-3 w-full border border-slate-200 text-slate-600 font-bold py-2.5 rounded-xl hover:bg-slate-50 transition-all text-xs">Save
+                Credentials</button>
         </div>
     </div>
 
     <!-- TARGET MODAL -->
-    <div id="target-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+    <div id="target-modal"
+        class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
         <div class="glass-card w-full max-w-xl rounded-2xl shadow-2xl p-6 flex flex-col max-h-[90vh]">
-            <div class="flex justify-between items-center mb-4"><h3 id="modal-date-title" class="text-lg font-extrabold text-slate-800">Set Daily Target</h3><button onclick="closeTargetModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg></button></div>
-            <input type="text" id="target-headline" placeholder="Day Headline" class="w-full mb-4 px-4 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold">
-            <div class="flex flex-col flex-grow min-h-0"><div class="relative mb-2"><input type="text" id="target-problem-search" placeholder="Search..." class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-100 rounded-lg text-xs outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-all"><span class="absolute left-3 top-2 text-slate-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2"/></svg></span></div><div id="search-results" class="flex-grow overflow-y-auto custom-scrollbar space-y-1 mb-4 border border-slate-100 rounded-lg p-2 bg-slate-50/50"></div><div id="selected-targets" class="flex flex-wrap gap-2 max-h-24 overflow-y-auto"></div></div>
-            <div class="flex gap-3 mt-6"><button onclick="saveDailyTargets()" class="flex-grow bg-indigo-600 text-white font-bold py-2.5 rounded-xl hover:bg-indigo-700 transition-all text-sm shadow-md">Save Plan</button></div>
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-date-title" class="text-lg font-extrabold text-slate-800">Set Daily Target</h3><button
+                    onclick="closeTargetModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-6 h-6"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" />
+                    </svg></button>
+            </div>
+            <input type="text" id="target-headline" placeholder="Day Headline"
+                class="w-full mb-4 px-4 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold">
+            <div class="flex flex-col flex-grow min-h-0">
+                <div class="relative mb-2"><input type="text" id="target-problem-search" placeholder="Search..."
+                        class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-100 rounded-lg text-xs outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-all"><span
+                        class="absolute left-3 top-2 text-slate-400"><svg class="w-4 h-4" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" />
+                        </svg></span></div>
+                <div id="search-results"
+                    class="flex-grow overflow-y-auto custom-scrollbar space-y-1 mb-4 border border-slate-100 rounded-lg p-2 bg-slate-50/50">
+                </div>
+                <div id="selected-targets" class="flex flex-wrap gap-2 max-h-24 overflow-y-auto"></div>
+            </div>
+            <div class="flex gap-3 mt-6"><button onclick="saveDailyTargets()"
+                    class="flex-grow bg-indigo-600 text-white font-bold py-2.5 rounded-xl hover:bg-indigo-700 transition-all text-sm shadow-md">Save
+                    Plan</button></div>
         </div>
     </div>
 
     <!-- Toast UI -->
-    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-2xl translate-y-20 transition-all duration-300 pointer-events-none opacity-0 flex items-center gap-3 z-[200] text-sm font-bold"><span id="toast-message"></span></div>
+    <div id="toast"
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-2xl translate-y-20 transition-all duration-300 pointer-events-none opacity-0 flex items-center gap-3 z-[200] text-sm font-bold">
+        <span id="toast-message"></span>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
