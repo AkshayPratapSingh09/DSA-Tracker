@@ -58,10 +58,10 @@ async function fetchFromGitHub() {
     icon.classList.add('animate-spin-fast');
 
     try {
-        const headers = { 'Authorization': `token ${token}` };
+        const headers = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' };
 
         // 1. Fetch CSV (Questions)
-        const csvRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathCsv}`, { headers });
+        const csvRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathCsv}?ref=main`, { headers });
         if (csvRes.ok) {
             const csvData = await csvRes.json();
             const csvContent = atob(csvData.content);
@@ -95,7 +95,7 @@ async function fetchFromGitHub() {
         }
 
         // 2. Fetch JSON (Targets & Metadata)
-        const jsonRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathJson}`, { headers });
+        const jsonRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathJson}?ref=main`, { headers });
         if (jsonRes.ok) {
             const jsonData = await jsonRes.json();
             try {
@@ -123,7 +123,7 @@ async function pushToGitHub() {
     const icon = document.getElementById('settings-icon');
     icon.classList.add('animate-spin-fast');
 
-    const headers = { 'Authorization': `token ${token}` };
+    const headers = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' };
 
     try {
         // 1. Push CSV (Questions + Status)
@@ -141,7 +141,7 @@ async function pushToGitHub() {
         const csvBase64 = btoa(csvOutput);
 
         let shaCsv = null;
-        const getCsv = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathCsv}`, { headers });
+        const getCsv = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathCsv}?ref=main`, { headers });
         if (getCsv.ok) shaCsv = (await getCsv.json()).sha;
 
         const resCsv = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathCsv}`, {
@@ -155,7 +155,7 @@ async function pushToGitHub() {
         const jsonBase64 = btoa(JSON.stringify(jsonContent, null, 2));
 
         let shaJson = null;
-        const getJson = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathJson}`, { headers });
+        const getJson = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathJson}?ref=main`, { headers });
         if (getJson.ok) shaJson = (await getJson.json()).sha;
 
         const resJson = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathJson}`, {
