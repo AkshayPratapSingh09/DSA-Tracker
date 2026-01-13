@@ -1,377 +1,377 @@
 "ID",Category,Question,Problem Link,Companies,Difficulty,Status
-def-1,Arrays,Maximum and Minimum Element,https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/,Amazon Google Microsoft,Easy,Pending
-def-2,Arrays,Reverse the Array,https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/,Infosys,Easy,Pending
+def-1,Arrays,Maximum and Minimum Element,https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/,Amazon Google Microsoft,Easy,Done
+def-2,Arrays,Reverse the Array,https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/,Infosys,Easy,Done
 def-3,Arrays,Maximum Subarray (Kadane's),https://leetcode.com/problems/maximum-subarray/,Facebook Microsoft,Medium,Pending
-import-1768248669473-0,Arrays,Maximum and Minimum Element in an Array,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Done
-import-1768248669473-2,Arrays,Maximum-Subarray,#,Microsoft Facebook Interview Qs,Medium,Pending
-import-1768248669473-3,Arrays,Contains Duplicate,#,Amazon Interview Qs,Medium,Pending
-import-1768248669473-4,Arrays,Chocolate Distribution Problem,#,Amazon Interview Qs,Medium,Done
-import-1768248669473-5,Arrays,Search in Rotated Sorted Array,#,Microsoft Google Adobe Amazon D-E-Shaw Flipkart Hike Intuit MakeMyTrip Paytm,Medium,Pending
-import-1768248669473-6,Arrays,Next Permutation,#,Uber Goldman Sachs Adobe Interview Qs,Medium,Done
-import-1768248669473-7,Arrays,Best time to Buy and Sell Stock,#,Amazon D-E-Shaw Directi Flipkart Goldman Sachs Intuit MakeMyTrip Microsoft Ola Cabs Oracle Paytm Pubmatic Quikr Salesforce Sapient Swiggy Walmart Media.net Google,Medium,Pending
-import-1768248669473-8,Arrays,Repeat and Missing Number Array,#,Amazon Interview Qs,Medium,Pending
-import-1768248669473-9,Arrays,Kth-Largest Element in an Array,#,Amazon Microsoft Walmart Adobe,Medium,Pending
-import-1768248669473-10,Arrays,Trapping Rain Water,#,Samsung Interview Qs,Medium,Pending
-import-1768248669473-11,Arrays,Product of Array Except Self,#,Microsoft Facebook Interview Qs,Medium,Pending
-import-1768248669473-12,Arrays,Maximum Product Subarray,#,Amazon D-E-Shaw Microsoft Morgan Stanley OYO Rooms Google,Medium,Pending
-import-1768248669473-13,Arrays,Find Minimum in Rotated Sorted Array,#,Adobe Amazon Microsoft Morgan Stanley Samsung Snapdeal Times Internet,Medium,Pending
-import-1768248669473-14,Arrays,Find Pair with Sum in Sorted & Rotated Array,#,Microsoft Google Apple Interview Qs,Medium,Pending
-import-1768248669473-15,Arrays,3Sum,#,Adobe Amazon Microsoft Morgan Stanley Samsung Snapdeal Times Internet,Medium,Pending
-import-1768248669473-16,Arrays,Container With Most Water,#,Flipkart Dunzo Interview Qs,Medium,Pending
-import-1768248669473-17,Arrays,Given Sum Pair,#,Infosys Amazon Flipkart Interview Qs,Medium,Pending
-import-1768248669473-18,Arrays,Kth - Smallest Element,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Pending
-import-1768248669473-19,Arrays,Merge Overlapping Intervals,#,Google Interview Qs,Medium,Pending
-import-1768248669473-20,Arrays,Find Minimum Number of Merge Operations to Make an Array Palindrome,#,Amazon,Medium,Pending
-import-1768248669473-21,Arrays,Given an Array of Numbers Arrange the Numbers to Form the Biggest Number,#,Barclays Interview Qs,Medium,Pending
-import-1768248669473-22,Arrays,Space Optimization Using Bit Manipulations,#,Amazon,Medium,Pending
-import-1768248669473-23,Arrays,Subarray Sum Divisible K,#,Snapdeal Microsoft,Medium,Pending
-import-1768248669473-24,Arrays,Print all Possible Combinations of r Elements in a Given Array of Size n,#,Amazon,Medium,Pending
-import-1768248669473-25,Arrays,Mo's Algorithm,#,Microsoft,Medium,Pending
-import-1768248669473-26,Strings,Valid Palindrome,#,Amazon Cisco D-E-Shaw Facebook FactSet Morgan Stanley Paytm Zoho,Medium,Pending
-import-1768248669473-27,Strings,Valid Anagram,#,Nagarro Media.net Directi Google Adobe Flipkart,Medium,Pending
-import-1768248669473-28,Strings,Valid parentheses,#,Google Interview Qs,Medium,Pending
-import-1768248669473-29,Strings,Remove Consecutive Characters,#,Samsung Adobe,Medium,Pending
-import-1768248669473-30,Strings,Longest Common Prefix,#,Adobe Grofers Dunzo Interview Qs,Medium,Pending
-import-1768248669473-31,Strings,Convert a Sentence into its Equivalent Mobile Numeric Keypad Sequence,#,Adobe,Medium,Pending
-import-1768248669473-32,Strings,Print all the Duplicates in the Input String,#,Ola Amdocs IQ,Medium,Pending
-import-1768248669473-33,Strings,Longest Substring without Repeating Characters,#,Morgan Stanley Amazon IQ,Medium,Pending
-import-1768248669473-34,Strings,Longest Repeating Character Replacement,#,Amazon Google,Medium,Pending
-import-1768248669473-35,Strings,Group Anagrams,#,Samsung Adobe Amazon Interview Qs,Medium,Pending
-import-1768248669473-36,Strings,Longest Palindromic Substring,#,Microsoft Google Samsung Visa IQ,Medium,Pending
-import-1768248669473-37,Strings,Palindromic Substrings,#,Microsoft IQ,Medium,Pending
-import-1768248669473-38,Strings,Next Permutation,#,Adobe Goldman Sachs Uber,Medium,Pending
-import-1768248669473-39,Strings,Count Palindromic Subsequences,#,Myntra Interview Qs,Medium,Pending
-import-1768248669473-40,Strings,Smallest Window in a String Containing all the Characters of Another String,#,Microsoft Amazon IQ,Medium,Pending
-import-1768248669473-41,Strings,Wildcard String Matching,#,Microsoft Amazon Ola IQ,Medium,Pending
-import-1768248669473-42,Strings,Longest Prefix Suffix,#,Flipkart Swiggy IQ,Medium,Pending
-import-1768248669473-43,Strings,Rabin-Karp Algorithm for Pattern Searching,#,Microsoft,Medium,Pending
-import-1768248669473-44,Strings,Transform One String to Another using Minimum Number of Given Operation,#,Directi,Medium,Pending
-import-1768248669473-45,Strings,Minimum Window Substring,#,Amazon Google MakeMyTrip Streamoid Technologies Microsoft Media.net Atlassian Flipkart,Medium,Pending
-import-1768248669473-46,Strings,Boyer Moore Algorithm for Pattern Searching,#,Amdocs,Medium,Pending
-import-1768248669473-47,Strings,Word Wrap,#,Microsoft,Medium,Pending
-import-1768248669473-48,2D Arrays,Zigzag (or diagonal) Traversal of Matrix,#,Amazon,Medium,Pending
-import-1768248669473-49,2D Arrays,Set Matrix Zeroes,#,Amazon Microsoft,Medium,Pending
-import-1768248669473-50,2D Arrays,Spiral Matrix,#,Flipkart Apple Societe Generale IQ,Medium,Pending
-import-1768248669473-51,2D Arrays,Rotate Image,#,Microsoft Paytm Samsung Adobe,Medium,Pending
-import-1768248669473-52,2D Arrays,Word Search,#,Google Ola Goldman Sachs IQ,Medium,Pending
-import-1768248669473-53,2D Arrays,Find the Number of Islands | Set 1 (Using DFS),#,Microsoft Uber Apple Amazon IQ,Medium,Pending
-import-1768248669473-54,2D Arrays,"Given a Matrix of â€˜Oâ€™ and â€˜Xâ€™, Replace â€˜Oâ€™ with â€˜Xâ€™ if Surrounded by â€˜Xâ€™",#,Google,Medium,Pending
-import-1768248669473-55,2D Arrays,Find a Common Element in all Rows of a Given Row-Wise Sorted Matrix,#,MAQ Software Microsoft VMWare,Medium,Pending
-import-1768248669473-56,2D Arrays,Create a Matrix with Alternating Rectangles of O and X,#,MAQ VMWare,Medium,Pending
-import-1768248669473-57,2D Arrays,Maximum Size Rectangle of all 1s,#,Amazon Microsoft,Medium,Pending
-import-1768248669473-58,Searching & Sorting,Permute Two Arrays such that Sum of Every Pair is Greater or Equal to K,#,Samsung,Medium,Pending
-import-1768248669473-59,Searching & Sorting,counting sort,#,Samsung Morgan Stanley Snapdeal EPAM Systems,Medium,Pending
-import-1768248669473-60,Searching & Sorting,find common elements three sorted arrays,#,MAQ Software Microsoft VMWare,Medium,Pending
-import-1768248669473-61,Searching & Sorting,Searching in an array where adjacent differ by at most k,#,TCS Amazon,Medium,Pending
-import-1768248669473-62,Searching & Sorting,ceiling in a sorted array,#,TCS,Medium,Pending
-import-1768248669473-63,Searching & Sorting,Piar with given difference,#,Amazon Visa,Medium,Pending
-import-1768248669473-64,Searching & Sorting,majority element,#,Amazon Google,Medium,Pending
-import-1768248669473-65,Searching & Sorting,count triplets with sum smaller that a given value,#,Amazon SAP Labs,Medium,Pending
-import-1768248669473-66,Searching & Sorting,Maximum Sum Subsequence with no adjacent elements,#,Amazon FactSet Oxigen Wallet OYO Rooms Paytm Walmart Yahoo Adobe Flipkart,Medium,Pending
-import-1768248669473-67,Searching & Sorting,Merge Sorted Arrays using O(1) Space,#,Amdocs Brocade Goldman Sachs Juniper Networks Linkedin Microsoft Quikr Snapdeal Synopsys Zoho Adobe,Medium,Pending
-import-1768248669473-68,Searching & Sorting,Inversion of Array,#,Adobe Amazon BankBazaar Flipkart Microsoft Myntra MakeMyTrip,Medium,Pending
-import-1768248669473-69,Searching & Sorting,Find Duplicates in O(n) Time and O(1) Extra Space,#,Amazon D-E-Shaw Flipkart Paytm Qualcomm Zoho,Medium,Pending
-import-1768248669473-70,Searching & Sorting,Radix Sort,#,Amazon Microsoft,Medium,Pending
-import-1768248669473-71,Searching & Sorting,Product of Array except itself,#,Accolite Amazon D-E-Shaw Intuit Morgan Stanley Opera Microsoft Flipkart,Medium,Pending
-import-1768248669473-72,Searching & Sorting,Make all Array Elements Equal,#,Amazon,Medium,Pending
-import-1768248669473-73,Searching & Sorting,Check if Reversing a Sub Array Make the Array Sorted,#,Amazon,Medium,Pending
-import-1768248669473-74,Searching & Sorting,Find Four Elements that Sum to a Given Value,#,Adobe Amazon Google Microsoft OYO Rooms,Medium,Pending
-import-1768248669473-75,Searching & Sorting,Median of Two Sorted Array with Different Size,#,Amazon Samsung Microsoft Google,Medium,Pending
-import-1768248669473-76,Searching & Sorting,Median of Stream of Integers Running Integers,#,Amazon Google,Medium,Pending
-import-1768248669473-77,Searching & Sorting,Print Subarrays with 0 Sum,#,Paytm Adobe,Medium,Pending
-import-1768248669473-78,Searching & Sorting,Aggressive Cows,#,Adobe,Medium,Pending
-import-1768248669473-79,Searching & Sorting,Allocate Minimum number of Pages,#,Google Infosys Codenation Amazon Microsoft,Medium,Pending
-import-1768248669473-80,Searching & Sorting,Minimum Swaps to Sort,#,Amazon Google,Medium,Pending
-import-1768248669473-81,Backtracking,Backtracking Set 2 Rat in a Maze,#,Microsoft Amazon,Medium,Pending
-import-1768248669473-82,Backtracking,Combinational Sum,#,Adobe Amazon Microsoft,Medium,Pending
-import-1768248669473-83,Backtracking,Crossword-Puzzle,#,Microsoft,Medium,Pending
-import-1768248669473-84,Backtracking,Longest Possible Route in a Matrix with Hurdles,#,Microsoft,Medium,Pending
-import-1768248669473-85,Backtracking,Printing all solutions in N-Queen Problem,#,Accolite Amazon Amdocs D-E-Shaw MAQ Software Twitter Visa Microsoft,Medium,Pending
-import-1768248669473-86,Backtracking,Solve the Sudoku,#,Amazon Directi Flipkart MakeMyTrip MAQ Software Microsoft Ola Cabs Oracle PayPal Zoho,Medium,Pending
-import-1768248669473-87,Backtracking,Partition Equal Subset Sum,#,Amazon Adobe Accolite Traveloka,Medium,Pending
-import-1768248669473-88,Backtracking,M Coloring Problem,#,Amazon,Medium,Pending
-import-1768248669473-89,Backtracking,Knight Tour,#,IBM,Medium,Pending
-import-1768248669473-90,Backtracking,Soduko,#,Amazon Adobe Accolite Traveloka,Medium,Pending
-import-1768248669473-91,Backtracking,Remove Invalid Parentheses,#,Uber,Medium,Pending
-import-1768248669473-92,Backtracking,Word Break Problem using Backtracking,#,,Medium,Pending
-import-1768248669473-93,Backtracking,Print all Palindromic Partitions of a String,#,Facebook Amazon Microsoft,Medium,Pending
-import-1768248669473-94,Backtracking,Find Shortest Safe Route in a Path with Landmines,#,Facebook Amazon Microsoft,Medium,Pending
-import-1768248669473-95,Backtracking,Partition of Set into K Subsets with Equal Sum,#,Amazon,Medium,Pending
-import-1768248669473-96,Backtracking,Backtracking set-7 hamiltonian cycle,#,Amazon,Medium,Pending
-import-1768248669473-97,Backtracking,tug-of-war,#,Google,Medium,Pending
-import-1768248669473-98,Backtracking,Maximum Possible Number by doing at most K swaps,#,Amazon Adobe Accolite Traveloka,Medium,Pending
-import-1768248669473-99,Backtracking,Backtracking set-8 solving cryptarithmetic puzzles,#,Goldman Sachs,Medium,Pending
-import-1768248669473-100,Backtracking,Find paths from corner cell to middle cell in maze,#,Meta,Medium,Pending
-import-1768248669473-101,Backtracking,Arithmetic Expressions,#,Flipkart,Medium,Pending
-import-1768248669473-102,Linked List,Reverse Linked List,#,Sprinklr,Medium,Pending
-import-1768248669473-103,Linked List,Linked List Cycle,#,Accolite Amazon D-E-Shaw Hike Lybrate Mahindra Comviva MakeMyTrip MAQ Software OYO Rooms Paytm Qualcomm Samsung SAP Labs Snapdeal Veritas VMWare Walmart Adobe,Medium,Pending
-import-1768248669473-104,Linked List,Merge Two Sorted Lists,#,Accolite Amazon Belzabar Brocade FactSet Flipkart MakeMyTrip Microsoft OATS Systems Oracle Samsung Synopsys Zoho,Medium,Pending
-import-1768248669473-105,Linked List,Delete without Head node,#,Amazon Goldman Sachs Kritikal Solutions Microsoft Samsung Visa,Medium,Pending
-import-1768248669473-106,Linked List,Remove duplicates from an unsorted linked list,#,Â AmazonÂ Intuit,Medium,Pending
-import-1768248669473-107,Linked List,Sort a linked list of 0s-1s-or-2s,#,Microsoft Amazon MakeMyTrip,Medium,Pending
-import-1768248669473-108,Linked List,Multiply two numbers represented linked lists,#,Amazon,Medium,Pending
-import-1768248669473-109,Linked List,Remove nth node from end of list,#,Accolite Adobe Amazon Citicorp Epic Systems FactSet Hike MAQ Software Monotype Solutions Morgan Stanley OYO Rooms Qualcomm Samsung Snapdeal Flipkart,Medium,Pending
-import-1768248669473-110,Linked List,Reorder List,#,Amazon Microsoft OYO Rooms Intuit,Medium,Pending
-import-1768248669473-111,Linked List,Detect and remove loop in a linked list,#,Accolite Amazon D-E-Shaw Hike Lybrate Mahindra Comviva MakeMyTrip MAQ Software OYO Rooms Paytm Qualcomm Samsung SAP Labs Snapdeal Veritas VMWare Walmart Adobe,Medium,Pending
-import-1768248669473-112,Linked List,Write a Function to get the Intersection Point of two Linked Lists,#,Amazon,Medium,Pending
-import-1768248669473-113,Linked List,Flatten a linked list with next and child pointers,#,Google,Medium,Pending
-import-1768248669473-114,Linked List,Linked list in zig-zag fashion,#,Micorsoft,Medium,Pending
-import-1768248669473-115,Linked List,Reverse a doubly linked list,#,Walmart,Medium,Pending
-import-1768248669473-116,Linked List,Delete nodes which have a greater value on right side,#,Amazon,Medium,Pending
-import-1768248669473-117,Linked List,Segregate even and odd Elements in a Linked List,#,Walmart,Medium,Pending
-import-1768248669473-118,Linked List,Point to next higher value node in a linked list with an Arbitrary Pointer,#,GeekyAnts,Medium,Pending
-import-1768248669473-119,Linked List,Rearrange a given linked list in place,#,Ola Uber,Medium,Pending
-import-1768248669473-120,Linked List,Sort Biotonic Doubly Linked Lists,#,Morgan Stanley,Medium,Pending
-import-1768248669473-121,Linked List,Merge K Sorted Lists,#,Microsoft Ola eBay,Medium,Pending
-import-1768248669473-122,Linked List,Merge sort for linked list,#,Accolite Adobe Amazon MAQ Software Microsoft Paytm Veritas,Medium,Pending
-import-1768248669473-123,Linked List,Quicksort on singly-linked list,#,Paytm,Medium,Pending
-import-1768248669473-124,Linked List,Sum of two linked lists,#,Accolite Amazon Flipkart MakeMyTrip Microsoft Morgan Stanley Qualcomm Snapdeal,Medium,Pending
-import-1768248669473-125,Linked List,Flattening a linked list,#,Â 24*7 Innovation LabsÂ AmazonÂ Drishti-SoftÂ FlipkartÂ Goldman SachsÂ MicrosoftÂ PaytmÂ PayuÂ QualcommÂ SnapdealÂ Visa,Medium,Pending
-import-1768248669473-126,Linked List,Clone a linked list with next and random Pointer,#,Triology,Medium,Pending
-import-1768248669473-127,Linked List,Subtract two numbers represented as linked lists,#,Amazon Goldman Sachs,Medium,Pending
-import-1768248669473-128,Linked List,P-129,#,,Medium,Pending
-import-1768248669473-129,Stacks & Queues,Implement two stacks in an Array,#,24*7 Innovation Labs Microsoft Samsung Snapdeal,Medium,Pending
-import-1768248669473-130,Stacks & Queues,Evaluation of Postfix Expression,#,Amazon Google Facebook,Medium,Pending
-import-1768248669473-131,Stacks & Queues,Implement Stack using Queues,#,Facebook,Medium,Pending
-import-1768248669473-132,Stacks & Queues,Queue Reversal,#,Amazon Morgain Stanley,Medium,Pending
-import-1768248669473-133,Stacks & Queues,Implement Stack Queue using Deque,#,Microsoft Atlassian,Medium,Pending
-import-1768248669474-134,Stacks & Queues,Reverse first k elements of queue,#,Microsoft Amdocs,Medium,Pending
-import-1768248669474-135,Stacks & Queues,Design Stack with Middle Operation,#,MaQ Software,Medium,Pending
-import-1768248669474-136,Stacks & Queues,Infix to Postfix,#,Amazon Samsung Paytm Vmware inc,Medium,Pending
-import-1768248669474-137,Stacks & Queues,Design and Implement Special stack,#,Amazon Google Microsoft Visa Goldman Sachs,Medium,Pending
-import-1768248669474-138,Stacks & Queues,Longest Valid String,#,Google Microsoft,Medium,Pending
-import-1768248669474-139,Stacks & Queues,Find if an expression has duplicate parenthesis or not,#,Flipkart Oracle OYO Rooms Snapdeal Walmart Yatra.com Microsoft Google,Medium,Pending
-import-1768248669474-140,Stacks & Queues,Stack permutations check if an array is stack permutation of other,#,Visa,Medium,Pending
-import-1768248669474-141,Stacks & Queues,Count natural numbers whose permutation greater number,#,Amazon,Medium,Pending
-import-1768248669474-142,Stacks & Queues,Sort a stack using Recursion,#,Amazon Goldman Sachs IBM Intuit Kuliza Yahoo Microsoft,Medium,Pending
-import-1768248669474-143,Stacks & Queues,Queue based approach for first non repeating character in a stream,#,Microsoft Flipkart,Medium,Pending
-import-1768248669474-144,Stacks & Queues,The Celebrity Problem,#,Google Visa Apple,Medium,Pending
-import-1768248669474-145,Stacks & Queues,Next larger Element,#,Visa,Medium,Pending
-import-1768248669474-146,Stacks & Queues,Distance of nearest cell,#,Flipkar Facebook,Medium,Pending
-import-1768248669474-147,Stacks & Queues,Rotten-oranges,#,Facebook,Medium,Pending
-import-1768248669474-148,Stacks & Queues,Next smaller element,#,Codenation,Medium,Pending
-import-1768248669474-149,Stacks & Queues,Circular-tour,#,Codenation Flipkart,Medium,Pending
-import-1768248669474-150,Stacks & Queues,Efficiently implement k-stacks single array,#,Flipkart,Medium,Pending
-import-1768248669474-152,Stacks & Queues,Iterative tower of hanoi,#,Microsoft Flipkart,Medium,Pending
-import-1768248669474-153,Stacks & Queues,Find the maximum of minimums for every window size in a given array,#,Amazon Microsoft Flipkart,Medium,Pending
-import-1768248669474-154,Stacks & Queues,lru cache implementation,#,Microsoft Uber Alibaba,Medium,Pending
-import-1768248669474-155,Stacks & Queues,Find a tour that visits all stations,#,Uber,Medium,Pending
-import-1768248669474-156,Greedy,Activity selection problem greedy algo,#,Facebook Morgan Stanley Flipkart,Medium,Pending
-import-1768248669474-157,Greedy,Greedy algorithm to find minimum number of coins,#,Accolite Amazon Morgan Stanley Oracle Paytm Samsung Snapdeal Synopsys Visa Microsoft Google,Medium,Pending
-import-1768248669474-158,Greedy,Minimum sum two numbers formed digits array-2,#,Google,Medium,Pending
-import-1768248669474-159,Greedy,Minimum sum absolute difference pairs two arrays,#,Amazon,Medium,Pending
-import-1768248669474-160,Greedy,Find maximum height pyramid from the given array of objects,#,Flipkart Amazon,Medium,Pending
-import-1768248669474-161,Greedy,Minimum cost for acquiring all coins with k extra coins allowed with every coin,#,,Medium,Pending
-import-1768248669474-162,Greedy,Find maximum equal sum of every three stacks,#,Microsoft Amazon Flipkart,Medium,Pending
-import-1768248669474-163,Greedy,Job sequencing problem,#,Microsoft Acolite,Medium,Pending
-import-1768248669474-164,Greedy,Greedy algorithm egyptian fraction,#,,Medium,Pending
-import-1768248669474-165,Greedy,Fractional knapsack problem,#,Microsoft,Medium,Pending
-import-1768248669474-166,Greedy,Maximum length chain of pairs,#,Amazon Microsoft,Medium,Pending
-import-1768248669474-167,Greedy,Find smallest number with given number of digits and digit sum,#,MAQ Software OYO Rooms,Medium,Pending
-import-1768248669474-168,Greedy,Maximize sum of consecutive differences circular-array,#,Maccafe,Medium,Pending
-import-1768248669474-169,Greedy,paper-cut minimum number squares,#,Google,Medium,Pending
-import-1768248669474-170,Greedy,Lexicographically smallest array-k consecutive swaps,#,Amazon,Medium,Pending
-import-1768248669474-171,Greedy,Problems-CHOCOLA,#,Flipkart,Medium,Pending
-import-1768248669474-172,Greedy,Find minimum time to finish all jobs with given constraints,#,,Medium,Pending
-import-1768248669474-173,Greedy,Job sequencing using disjoint set union,#,Samsung,Medium,Pending
-import-1768248669474-174,Greedy,Rearrange characters string such that no two adjacent are same,#,Amazon Microsoft,Medium,Pending
-import-1768248669474-175,Greedy,Minimum edges to reverse to make path from a source to a destination,#,,Medium,Pending
-import-1768248669474-176,Greedy,Minimize Cash Flow among a given set of friends who have borrowed money from each other,#,,Medium,Pending
-import-1768248669474-177,Greedy,Minimum Cost to cut a board into squares,#,Maccafe,Medium,Pending
-import-1768248669474-178,Binary Trees,Maximum Depth of Binary Tree,#,Amazon Cadence India CouponDunia D-E-Shaw FactSet FreeCharge MakeMyTrip,Medium,Pending
-import-1768248669474-179,Binary Trees,Reverse Level Order Traversal,#,Amazon Microsoft flipkart Adobe,Medium,Pending
-import-1768248669474-180,Binary Trees,Subtree of Another Tree,#,Amazon Microsoft Facebook,Medium,Pending
-import-1768248669474-181,Binary Trees,Invert Binary Tree,#,Amazon Hike,Medium,Pending
-import-1768248669474-182,Binary Trees,Binary Tree Level Order Traversal,#,Accolite Adobe Amazon Cisco D-E-Shaw Flipkart,Medium,Pending
-import-1768248669474-183,Binary Trees,Left View of Binary Tree,#,Microsoft Adobe Cisco Networking Academy,Medium,Pending
-import-1768248669474-184,Binary Trees,Right View of Binary Tree,#,Amdocs,Medium,Pending
-import-1768248669474-185,Binary Trees,ZigZag Tree Traversal,#,Amazon Cisco FactSet Hike Snapdeal Walmart Microsoft Flipkart,Medium,Pending
-import-1768248669474-186,Binary Trees,Create a mirror tree from the given binary tree,#,Accolite Adobe Amazon Belzabar EBay Goldman Sachs Microsoft Morgan Stanley Myntra Ola Cabs Paytm,Medium,Pending
-import-1768248669474-187,Binary Trees,Leaf at same level,#,Amazon,Medium,Pending
-import-1768248669474-188,Binary Trees,Check for Balanced Tree,#,Amazon Walmart Microsoft,Medium,Pending
-import-1768248669474-189,Binary Trees,Transform to Sum Tree,#,Amazon FactSet Microsoft Samsung Walmart,Medium,Pending
-import-1768248669474-190,Binary Trees,Check if Tree is Isomorphic,#,Amazon Microsoft,Medium,Pending
-import-1768248669474-191,Binary Trees,Same Tree,#,Amazon Microsoft Flipkart,Medium,Pending
-import-1768248669474-192,Binary Trees,Construct Binary Tree from Preorder and Inorder Traversal,#,Accolite Amazon Microsoft,Medium,Pending
-import-1768248669474-193,Binary Trees,Height of Binary Tree,#,Amazon Cadence India CouponDunia D-E-Shaw FactSet FreeCharge MakeMyTrip,Medium,Pending
-import-1768248669474-194,Binary Trees,Diameter of a Binary Tree,#,Amazon Microsoft OYO Rooms,Medium,Pending
-import-1768248669474-195,Binary Trees,Top View of Binary Tree,#,Microsoft Adobe Expedia Group,Medium,Pending
-import-1768248669474-196,Binary Trees,Bottom View of Binary Tree,#,DE Shaw India,Medium,Pending
-import-1768248669474-197,Binary Trees,Diagonal Traversal of Binary Tree,#,Amazon Microsoft,Medium,Pending
-import-1768248669474-198,Binary Trees,Boundary Traversal of binary tree,#,Accolite Amazon FactSet Hike Kritikal Solutions,Medium,Pending
-import-1768248669474-199,Binary Trees,Construct Binary Tree from String with Brackets,#,Microsoft Morgan Stanley OYO Rooms Payu Samsung Snapdeal Flipkart,Medium,Pending
-import-1768248669474-200,Binary Trees,Minimum swap required to convert binary tree to binary search tree,#,Adobe Amazon,Medium,Pending
-import-1768248669474-201,Binary Trees,Duplicate subtree in Binary Tree,#,Google,Medium,Pending
-import-1768248669474-202,Binary Trees,Check if a given graph is tree or not,#,Microsoft Amazon,Medium,Pending
-import-1768248669474-203,Binary Trees,Lowest Common Ancestor in a Binary Tree,#,Accolite Amazon American Express Cisco Expedia Flipkart MakeMyTrip Microsoft OYO Room,Medium,Pending
-import-1768248669474-204,Binary Trees,Min distance between two given nodes of a Binary Tree,#,Amazon Linkedin MakeMyTrip Ola Cabs Qualcomm Samsung,Medium,Pending
-import-1768248669474-205,Binary Trees,Duplicate Subtrees,#,Ola,Medium,Pending
-import-1768248669474-206,Binary Trees,Kth ancestor of a node in binary tree,#,Josh Technology Group,Medium,Pending
-import-1768248669474-207,Binary Trees,Binary Tree Maximum Path Sum,#,Samsung Facebook,Medium,Pending
-import-1768248669474-208,Binary Trees,Serialize and Deserialize Binary Tree,#,Flipkart InMobi Linkedin MAQ Software Microsoft Paytm Quikr Yahoo,Medium,Pending
-import-1768248669474-209,Binary Trees,Binary Tree to DLL,#,Accolite Amazon Goldman Sachs Microsoft Morgan Stanley Salesforce Snapdeal,Medium,Pending
-import-1768248669474-210,Binary Trees,Print all k-sum paths in a binary tree,#,Accolite Amazon Goldman Sachs,Medium,Pending
-import-1768248669474-211,Binary Search Trees,Lowest Common Ancestor of a Binary Search Tree,#,Accolite Amazon Flipkart MAQ Software Microsoft Samsung Synopsys,Medium,Pending
-import-1768248669474-212,Binary Search Trees,Binary Search Tree | Set 1 (Search and Insertion),#,Accolite Amazon Microsoft Paytm Samsung,Medium,Pending
-import-1768248669474-213,Binary Search Trees,Minimum element in BST,#,Microsoft,Medium,Pending
-import-1768248669474-214,Binary Search Trees,Predecessor and Successor,#,Google Adobe Goladman Sachs Direct,Medium,Pending
-import-1768248669474-215,Binary Search Trees,Check whether BST contains Dead End,#,Walmart,Medium,Pending
-import-1768248669474-216,Binary Search Trees,Binary Tree to BST,#,HSBC,Medium,Pending
-import-1768248669474-217,Binary Search Trees,Kth largest element in BST,#,Accolite Amazon Samsung SAP Labs Microsoft,Medium,Pending
-import-1768248669474-218,Binary Search Trees,Validate Binary Search Tree,#,OYO Rooms Qualcomm Samsung Snapdeal VMWare Walmart Wooker Amazon Facebook,Medium,Pending
-import-1768248669474-219,Binary Search Trees,Kth Smallest Element in a BST,#,Accolite Amazon Google,Medium,Pending
-import-1768248669474-220,Binary Search Trees,Delete Node in a BST,#,Adobe Barclays,Medium,Pending
-import-1768248669474-221,Binary Search Trees,Flatten BST to sorted list,#,Microsoft,Medium,Pending
-import-1768248669474-222,Binary Search Trees,Preorder to Postorder,#,Amazon Linkedin Flipkart,Medium,Pending
-import-1768248669474-223,Binary Search Trees,Count BST nodes that lie in a given range,#,D-E-Shaw Google,Medium,Pending
-import-1768248669474-224,Binary Search Trees,Populate Inorder Successor for all Nodes,#,Sap labs,Medium,Pending
-import-1768248669474-225,Binary Search Trees,Convert Normal BST to Balanced BST,#,Paytm,Medium,Pending
-import-1768248669474-226,Binary Search Trees,Merge two BSTs,#,DE Shaw India,Medium,Pending
-import-1768248669474-227,Binary Search Trees,"Given n appointments, find all conflicting appointments",#,Samsung,Medium,Pending
-import-1768248669474-228,Binary Search Trees,Replace every element,#,Samsung,Medium,Pending
-import-1768248669474-229,Binary Search Trees,Construct BST from given preorder traversal,#,Adobe Morgan Stanley Microsoft,Medium,Pending
-import-1768248669474-230,Binary Search Trees,Find median of BST in O(n) time and O(1) space,#,Amazon,Medium,Pending
-import-1768248669474-231,Binary Search Trees,Largest BST in a Binary Tree,#,Amazon D-E-Shaw Samsung Microsoft Flipkart,Medium,Pending
-import-1768248669474-232,Heaps & Hashing,Choose k array elements such that difference of maximum and minimum is minimized,#,,Medium,Pending
-import-1768248669474-233,Heaps & Hashing,Heap Sort,#,Adobe,Medium,Pending
-import-1768248669474-234,Heaps & Hashing,Top K Frequent Elements,#,Amazon Microsoft,Medium,Pending
-import-1768248669474-235,Heaps & Hashing,k largest elements in an array,#,Amazon Microsoft Walmart Adobe,Medium,Pending
-import-1768248669474-236,Heaps & Hashing,Next Greater Element,#,Amazon Microsoft Flipkart Adobe,Medium,Pending
-import-1768248669474-237,Heaps & Hashing,Kâ€™th Smallest/Largest Element in Unsorted Array,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Pending
-import-1768248669474-238,Heaps & Hashing,Find the maximum repeating number in O(n) time and O(1) extra space,#,Accolite Amazon,Medium,Pending
-import-1768248669474-239,Heaps & Hashing,K-th smallest element after removing some integers from natural numbers,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Pending
-import-1768248669474-240,Heaps & Hashing,Find k closest elements to a given value,#,Amazon OYO Rooms,Medium,Pending
-import-1768248669474-241,Heaps & Hashing,Kâ€™th largest element in a stream,#,Â AmazonÂ CiscoÂ HikeÂ OYO RoomsÂ WalmartÂ MicrosoftÂ Flipkart,Medium,Pending
-import-1768248669474-242,Heaps & Hashing,Connect Ropes,#,Amazoon Oyo Goldman Sachs,Medium,Pending
-import-1768248669474-243,Heaps & Hashing,Cuckoo Hashing,#,Amaxon,Medium,Pending
-import-1768248669474-244,Heaps & Hashing,Itinerary from a List of Tickets,#,Microsoft Ola eBay,Medium,Pending
-import-1768248669474-245,Heaps & Hashing,Largest Subarray with 0 Sum,#,Amazon MakeMyTrip Microsoft,Medium,Pending
-import-1768248669474-246,Heaps & Hashing,Count distinct elements in every window of size  k,#,Accolite Amazon Microsoft,Medium,Pending
-import-1768248669474-247,Heaps & Hashing,Group Shifted Strings,#,Oracle,Medium,Pending
-import-1768248669474-248,Heaps & Hashing,Merge K Sorted lists,#,Microsoft Ola eBay,Medium,Pending
-import-1768248669474-249,Heaps & Hashing,Find Median from Data Stream,#,Adobe Amazon Apple Belzabar D-E-Shaw Facebook Flipkart Google Intuit Microsoft Morgan Stanley Ola Cabs Oracle Samsung SAP Labs Yahoo,Medium,Pending
-import-1768248669474-250,Heaps & Hashing,Sliding Window Maximum,#,Amazon Directi Flipkart Microsoft Google,Medium,Pending
-import-1768248669474-251,Heaps & Hashing,Find the smallest positive number,#,Accolite Amazon Samsung Snapdeal,Medium,Pending
-import-1768248669474-252,Heaps & Hashing,Find Surpasser Count of each element in array,#,Amazon Morgan Stanley Ola Cabs SAP Labs,Medium,Pending
-import-1768248669474-253,Heaps & Hashing,Tournament Tree and Binary Heap,#,Amazon Ola Cabs Samsung Synopsys Walmart Microsoft,Medium,Pending
-import-1768248669474-254,Heaps & Hashing,Check for palindrome,#,Amazon Cisco D-E-Shaw Facebook FactSet Morgan Stanley Paytm Zoho,Medium,Pending
-import-1768248669474-255,Heaps & Hashing,Length of the largest subarray with contiguous elements,#,Amazon Intuit Microsoft,Medium,Pending
-import-1768248669474-256,Heaps & Hashing,Palindrome Substring Queries,#,Amazon Morgan Stanley Ola Cabs SAP Labs,Medium,Pending
-import-1768248669474-257,Heaps & Hashing,Subarray distinct elements,#,Microsoft Ola eBay,Medium,Pending
-import-1768248669474-258,Heaps & Hashing,Find the recurring function,#,MAQ Software,Medium,Pending
-import-1768248669474-259,Heaps & Hashing,K maximum sum combinations from two arrays,#,Amazon,Medium,Pending
-import-1768248669474-260,Graphs,BFS,#,Samsung Delhivery SAP Labs,Medium,Pending
-import-1768248669474-261,Graphs,DFS,#,Samsung Intuit Goldman Sachs,Medium,Pending
-import-1768248669474-262,Graphs,Flood Fill Algorithm,#,Google Adobe Apple,Medium,Pending
-import-1768248669474-263,Graphs,Number of Triangles,#,IBM,Medium,Pending
-import-1768248669474-264,Graphs,Detect cycle in a graph,#,Lenksart,Medium,Pending
-import-1768248669474-265,Graphs,Detect cycle in an undirected graph,#,Samsung,Medium,Pending
-import-1768248669474-266,Graphs,Rat in a Maze Problem,#,Sharechat Directi,Medium,Pending
-import-1768248669474-267,Graphs,Steps by Knight,#,Samsung,Medium,Pending
-import-1768248669474-268,Graphs,Clone graph,#,Google MAQ Software Apple Facebook,Medium,Pending
-import-1768248669474-269,Graphs,Number of Operations to Make Network Connected,#,Samsung,Medium,Pending
-import-1768248669474-270,Graphs,Dijkstraâ€™s shortest path algorithm,#,Amazon,Medium,Pending
-import-1768248669474-271,Graphs,Topological Sort,#,Amazon Google Flipkart Oyo Fipkart Samsung,Medium,Pending
-import-1768248669474-272,Graphs,Oliver and the Game,#,Sharechat Directi,Medium,Pending
-import-1768248669474-273,Graphs,Minimum time taken by each job to be completed given by a Directed Acyclic Graph,#,Amazon,Medium,Pending
-import-1768248669474-274,Graphs,Find whether it is possible to finish all tasks or not from given dependencies,#,Directi Sharechat,Medium,Pending
-import-1768248669474-275,Graphs,Find the number of islands,#,Razorpay,Medium,Pending
-import-1768248669474-276,Graphs,Prim's Algo,#,Visa,Medium,Pending
-import-1768248669474-277,Graphs,Negative Weighted Cycle,#,Amazon,Medium,Pending
-import-1768248669474-278,Graphs,Floyd Warshall,#,Google Uber,Medium,Pending
-import-1768248669474-279,Graphs,Graph Coloring,#,Morgan Stanley,Medium,Pending
-import-1768248669474-280,Graphs,Snakes and Ladders,#,Goldman Sachs Makemytrip,Medium,Pending
-import-1768248669474-281,Graphs,Kosaraju's Theorem,#,Paytm,Medium,Pending
-import-1768248669474-282,Graphs,Journey to moon,#,Lenksart Payload,Medium,Pending
-import-1768248669474-283,Graphs,Vertex Cover,#,Intuit,Medium,Pending
-import-1768248669474-284,Graphs,M Coloring Problem,#,Uber,Medium,Pending
-import-1768248669474-285,Graphs,Cheapest Flights Within K Stops,#,Uber Paypal,Medium,Pending
-import-1768248669474-286,Graphs,Find if there is a path of more than k length from a source,#,Cisco Intuit,Medium,Pending
-import-1768248669474-287,Graphs,Bellman Ford,#,Sharechat Directi,Medium,Pending
-import-1768248669474-288,Graphs,Bipartitie Graph,#,Microsoft Flipkart,Medium,Pending
-import-1768248669474-289,Graphs,Word-Ladder,#,Microsoft,Medium,Pending
-import-1768248669474-290,Graphs,Allen Dictionary,#,Samsung,Medium,Pending
-import-1768248669474-291,Graphs,Kruskals MST,#,Amazon Cisco Samsung,Medium,Pending
-import-1768248669474-292,Graphs,Total number spanning trees graph,#,Amazon Cisco Samsung Microsoft Flipkart,Medium,Pending
-import-1768248669474-293,Graphs,Travelling Salesman,#,Google Microsoft Opera,Medium,Pending
-import-1768248669474-294,Graphs,Find longest path directed acyclic graph,#,Google,Medium,Pending
-import-1768248669474-295,Graphs,Two Clique Problem,#,Microsoft,Medium,Pending
-import-1768248669474-296,Graphs,Minimise the cash flow,#,Intuit Uber,Medium,Pending
-import-1768248669474-297,Graphs,Chinese postman,#,Intuit,Medium,Pending
-import-1768248669474-298,Graphs,Water Jug,#,Intuit Uber,Medium,Pending
-import-1768248669474-299,Graphs,Water Jug 2,#,MakeMyTrip MAQ Software,Medium,Pending
-import-1768248669474-300,Tries,Construct a trie from scratch,#,Â AccoliteÂ AmazonÂ D-E-ShawÂ FactSetÂ Microsoft,Medium,Pending
-import-1768248669474-301,Tries,Print unique rows in a given boolean matrix,#,Amazon Zoho,Medium,Pending
-import-1768248669474-302,Tries,Word Break Problem | (Trie solution),#,Amazon Google Hike IBM MAQ Software Microsoft Walmart Zoho,Medium,Pending
-import-1768248669474-303,Tries,"Given a sequence of words, print all anagrams together",#,Amazon D-E-Shaw Goldman Sachs Morgan Stanley Snapdeal Microsoft,Medium,Pending
-import-1768248669474-304,Tries,Find shortest unique prefix for every word in a given list,#,Microsoft Google,Medium,Pending
-import-1768248669474-305,Tries,Implement a Phone Directory,#,Amazon Microsoft Snapdeal,Medium,Pending
-import-1768248669474-306,DP,Knapsack with Duplicate Items,#,Amazon,Medium,Pending
-import-1768248669474-307,DP,BBT counter,#,Microsoft,Medium,Pending
-import-1768248669474-308,DP,Reach a given score,#,Samsung,Medium,Pending
-import-1768248669474-309,DP,Maximum difference of zeros and ones in binary string,#,Ola,Medium,Pending
-import-1768248669474-310,DP,Climbing Stairs,#,Intuit,Medium,Pending
-import-1768248669474-311,DP,Permutation Coefficient,#,Amazon,Medium,Pending
-import-1768248669474-312,DP,Longest Repeating Subsequence,#,Google Amazon,Medium,Pending
-import-1768248669474-313,DP,Pairs with specific difference,#,Ola,Medium,Pending
-import-1768248669474-314,DP,Longest subsequence-1,#,Amazon,Medium,Pending
-import-1768248669474-315,DP,Coin Change,#,Microsoft Samsung Barclays Apple Adobe,Medium,Pending
-import-1768248669474-316,DP,LIS,#,Amazon Google Facebook Fidelity International,Medium,Pending
-import-1768248669474-317,DP,Longest Common Subsequence,#,Siemens Amazon Google,Medium,Pending
-import-1768248669474-318,DP,Word Break,#,Amazon Google Microsoft Walmart Apple IBM,Medium,Pending
-import-1768248669474-319,DP,Combination Sum IV,#,Adobe Amazon Microsoft,Medium,Pending
-import-1768248669474-320,DP,House Robber,#,Apple Uber,Medium,Pending
-import-1768248669474-321,DP,Houe Robber 2,#,Arrays Dynamic Programming,Medium,Pending
-import-1768248669474-322,DP,Decode Ways,#,Adobe Uber,Medium,Pending
-import-1768248669474-323,DP,Unique Paths,#,Google Microsoft,Medium,Pending
-import-1768248669474-324,DP,Jumps Game,#,Facebook Amazon Microsoft Google,Medium,Pending
-import-1768248669474-325,DP,Knapsack Problem,#,Amazon Directi Flipkart GreyOrange Microsoft Mobicip Morgan Stanley Oracle Payu Snapdeal Visa,Medium,Pending
-import-1768248669474-326,DP,nCr,#,Google,Medium,Pending
-import-1768248669474-327,DP,Catalan Number,#,Amazon Google,Medium,Pending
-import-1768248669474-328,DP,Edit Distance,#,Google Goldman Sachs Citrix,Medium,Pending
-import-1768248669474-329,DP,Subset Sum,#,Amazon Google,Medium,Pending
-import-1768248669474-330,DP,Gold mine,#,Samsung,Medium,Pending
-import-1768248669474-331,DP,Assembly Line Scheduling,#,Goldman Sachs,Medium,Pending
-import-1768248669474-332,DP,Maximize The Cut Segments,#,Amazon OYO Rooms Microsoft,Medium,Pending
-import-1768248669474-333,DP,Maximum sum increasing subsequence,#,Amazon Morgan Stanley Microsoft,Medium,Pending
-import-1768248669475-334,DP,Count all subsequences having product less than K,#,Goldman Sachs,Medium,Pending
-import-1768248669475-336,DP,Egg dropping puzzle,#,Amazon D-E-Shaw Goldman Sachs Google Hike MakeMyTrip MAQ Software Myntra Nearbuy Opera Oracle Philips Samsung Service Now Unisys VMWare Microsoft,Medium,Pending
-import-1768248669475-337,DP,Max length chain,#,Amazon Microsoft,Medium,Pending
-import-1768248669475-338,DP,Largest Square in Matrix,#,Amazon Samsung,Medium,Pending
-import-1768248669475-339,DP,Maximum Path Sum,#,Amazon Microsoft Oyo Directi,Medium,Pending
-import-1768248669475-340,DP,Minimum Number of Jumps,#,Adobe Amazon Housing.com Moonfrog Labs Walmart Microsoft Google Flipkart,Medium,Pending
-import-1768248669475-341,DP,Minimum removals from array to make max â€“ min <= K,#,Amazon,Medium,Pending
-import-1768248669475-342,DP,Longest Common Substring,#,Webarch Club,Medium,Pending
-import-1768248669475-343,DP,Partition Equal Subset Sum,#,Amazon Accolite Traveloca Adobe,Medium,Pending
-import-1768248669475-344,DP,Longest Palindromic Subsequnce,#,Amazon Google,Medium,Pending
-import-1768248669475-345,DP,Count Palindromic Subsequences,#,Myntra,Medium,Pending
-import-1768248669475-346,DP,Longest Palindromic Substring,#,Amazon Microsoft Samsung Visa,Medium,Pending
-import-1768248669475-347,DP,Longest Alternating Sequence,#,Ola,Medium,Pending
-import-1768248669475-348,DP,Weighted Job Scheduling,#,Intuit,Medium,Pending
-import-1768248669475-349,DP,Coin Game,#,Salesforce,Medium,Pending
-import-1768248669475-350,DP,Coin Game Winner,#,Ola,Medium,Pending
-import-1768248669475-351,DP,Optimal Strategy for a game,#,Google IBM,Medium,Pending
-import-1768248669475-352,DP,Word Wrap,#,Microsoft,Medium,Pending
-import-1768248669475-353,DP,Mobile numeric keypad,#,Amazon Microsoft,Medium,Pending
-import-1768248669475-354,DP,Maximum Length of Pair Chain,#,Amazon Microsoft,Medium,Pending
-import-1768248669475-355,DP,Matrix Chain Multiplication,#,Walmart Flipkart,Medium,Pending
-import-1768248669475-356,DP,Maximum profit by buying and selling a share at most twice,#,Accolite Amazon Microsoft,Medium,Pending
-import-1768248669475-357,DP,Optimal BST,#,Google,Medium,Pending
-import-1768248669475-358,DP,Largest Submatrix with sum 0,#,Amazon MakeMyTrip Microsoft,Medium,Pending
-import-1768248669475-359,DP,Largest area rectangular sub-matrix with equal number of 1â€™s and 0â€™s,#,Amazon Directi Intuit MakeMyTrip Microsoft Samsung Google Flipkart,Medium,Pending
-import-1768248669475-360,Bit Manipulation,Count set bits in an integer,#,Adobe Apple,Medium,Pending
-import-1768248669475-361,Bit Manipulation,Find the two non-repeating elements in an array of repeating elements,#,Accolite Amazon FactSet Google MakeMyTrip Microsoft Qualcomm Samsung,Medium,Pending
-import-1768248669475-362,Bit Manipulation,Program to find whether a no is power of two,#,Adobe,Medium,Pending
-import-1768248669475-363,Bit Manipulation,Find position of the only set bit,#,Microsoft,Medium,Pending
-import-1768248669475-364,Bit Manipulation,Count number of bits to be flipped to convert A to B,#,Maq Software,Medium,Pending
-import-1768248669475-365,Bit Manipulation,Count total set bits in all numbers from 1 to n,#,Microsoft,Medium,Pending
-import-1768248669475-366,Bit Manipulation,Copy set bits in a range,#,Facebook,Medium,Pending
-import-1768248669475-367,Bit Manipulation,"Calculate square of a number without using *, / and pow()",#,Amazon,Medium,Pending
-import-1768248669475-368,Bit Manipulation,"Divide two integers without using multiplication, division and mod operator",#,Microsoft,Medium,Pending
-import-1768248669475-369,Bit Manipulation,Power Set,#,Google Adobe Paytm,Medium,Pending
-import-1768248669475-370,Segment Trees,Range Sum Query - Immutable,#,,Medium,Pending
-import-1768248669475-371,Segment Trees,Range Minimum Query,#,Google Interview Qs,Medium,Pending
-import-1768248669475-372,Segment Trees,Range Sum Query - Mutable,#,Alibaba,Medium,Pending
-import-1768248669475-373,Segment Trees,Create Sorted Array through Instructions,#,Samsung Accolite,Medium,Pending
-import-1768248669475-374,Segment Trees,Count of Range Sum,#,Walmart,Medium,Pending
-import-1768248669475-375,Segment Trees,Count of Smaller Numbers After Self,#,Codenation Google,Medium,Pending
+import-1768247344544-0,Arrays,Maximum and Minimum Element in an Array,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Done
+import-1768247344544-2,Arrays,Maximum-Subarray,#,Microsoft Facebook Interview Qs,Medium,Pending
+import-1768247344544-3,Arrays,Contains Duplicate,#,Amazon Interview Qs,Medium,Pending
+import-1768247344544-4,Arrays,Chocolate Distribution Problem,#,Amazon Interview Qs,Medium,Pending
+import-1768247344544-5,Arrays,Search in Rotated Sorted Array,#,Microsoft Google Adobe Amazon D-E-Shaw Flipkart Hike Intuit MakeMyTrip Paytm,Medium,Pending
+import-1768247344544-6,Arrays,Next Permutation,#,Uber Goldman Sachs Adobe Interview Qs,Medium,Pending
+import-1768247344544-7,Arrays,Best time to Buy and Sell Stock,#,Amazon D-E-Shaw Directi Flipkart Goldman Sachs Intuit MakeMyTrip Microsoft Ola Cabs Oracle Paytm Pubmatic Quikr Salesforce Sapient Swiggy Walmart Media.net Google,Medium,Pending
+import-1768247344544-8,Arrays,Repeat and Missing Number Array,#,Amazon Interview Qs,Medium,Pending
+import-1768247344544-9,Arrays,Kth-Largest Element in an Array,#,Amazon Microsoft Walmart Adobe,Medium,Pending
+import-1768247344544-10,Arrays,Trapping Rain Water,#,Samsung Interview Qs,Medium,Pending
+import-1768247344544-11,Arrays,Product of Array Except Self,#,Microsoft Facebook Interview Qs,Medium,Pending
+import-1768247344544-12,Arrays,Maximum Product Subarray,#,Amazon D-E-Shaw Microsoft Morgan Stanley OYO Rooms Google,Medium,Pending
+import-1768247344544-13,Arrays,Find Minimum in Rotated Sorted Array,#,Adobe Amazon Microsoft Morgan Stanley Samsung Snapdeal Times Internet,Medium,Pending
+import-1768247344544-14,Arrays,Find Pair with Sum in Sorted & Rotated Array,#,Microsoft Google Apple Interview Qs,Medium,Pending
+import-1768247344544-15,Arrays,3Sum,#,Adobe Amazon Microsoft Morgan Stanley Samsung Snapdeal Times Internet,Medium,Pending
+import-1768247344544-16,Arrays,Container With Most Water,#,Flipkart Dunzo Interview Qs,Medium,Pending
+import-1768247344544-17,Arrays,Given Sum Pair,#,Infosys Amazon Flipkart Interview Qs,Medium,Pending
+import-1768247344544-18,Arrays,Kth - Smallest Element,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Pending
+import-1768247344544-19,Arrays,Merge Overlapping Intervals,#,Google Interview Qs,Medium,Pending
+import-1768247344544-20,Arrays,Find Minimum Number of Merge Operations to Make an Array Palindrome,#,Amazon,Medium,Pending
+import-1768247344544-21,Arrays,Given an Array of Numbers Arrange the Numbers to Form the Biggest Number,#,Barclays Interview Qs,Medium,Pending
+import-1768247344544-22,Arrays,Space Optimization Using Bit Manipulations,#,Amazon,Medium,Pending
+import-1768247344544-23,Arrays,Subarray Sum Divisible K,#,Snapdeal Microsoft,Medium,Pending
+import-1768247344544-24,Arrays,Print all Possible Combinations of r Elements in a Given Array of Size n,#,Amazon,Medium,Pending
+import-1768247344544-25,Arrays,Mo's Algorithm,#,Microsoft,Medium,Pending
+import-1768247344544-26,Strings,Valid Palindrome,#,Amazon Cisco D-E-Shaw Facebook FactSet Morgan Stanley Paytm Zoho,Medium,Pending
+import-1768247344544-27,Strings,Valid Anagram,#,Nagarro Media.net Directi Google Adobe Flipkart,Medium,Pending
+import-1768247344544-28,Strings,Valid parentheses,#,Google Interview Qs,Medium,Pending
+import-1768247344544-29,Strings,Remove Consecutive Characters,#,Samsung Adobe,Medium,Pending
+import-1768247344544-30,Strings,Longest Common Prefix,#,Adobe Grofers Dunzo Interview Qs,Medium,Pending
+import-1768247344544-31,Strings,Convert a Sentence into its Equivalent Mobile Numeric Keypad Sequence,#,Adobe,Medium,Pending
+import-1768247344544-32,Strings,Print all the Duplicates in the Input String,#,Ola Amdocs IQ,Medium,Pending
+import-1768247344544-33,Strings,Longest Substring without Repeating Characters,#,Morgan Stanley Amazon IQ,Medium,Pending
+import-1768247344544-34,Strings,Longest Repeating Character Replacement,#,Amazon Google,Medium,Pending
+import-1768247344544-35,Strings,Group Anagrams,#,Samsung Adobe Amazon Interview Qs,Medium,Pending
+import-1768247344544-36,Strings,Longest Palindromic Substring,#,Microsoft Google Samsung Visa IQ,Medium,Pending
+import-1768247344544-37,Strings,Palindromic Substrings,#,Microsoft IQ,Medium,Pending
+import-1768247344544-38,Strings,Next Permutation,#,Adobe Goldman Sachs Uber,Medium,Pending
+import-1768247344544-39,Strings,Count Palindromic Subsequences,#,Myntra Interview Qs,Medium,Pending
+import-1768247344544-40,Strings,Smallest Window in a String Containing all the Characters of Another String,#,Microsoft Amazon IQ,Medium,Pending
+import-1768247344544-41,Strings,Wildcard String Matching,#,Microsoft Amazon Ola IQ,Medium,Pending
+import-1768247344544-42,Strings,Longest Prefix Suffix,#,Flipkart Swiggy IQ,Medium,Pending
+import-1768247344544-43,Strings,Rabin-Karp Algorithm for Pattern Searching,#,Microsoft,Medium,Pending
+import-1768247344544-44,Strings,Transform One String to Another using Minimum Number of Given Operation,#,Directi,Medium,Pending
+import-1768247344544-45,Strings,Minimum Window Substring,#,Amazon Google MakeMyTrip Streamoid Technologies Microsoft Media.net Atlassian Flipkart,Medium,Pending
+import-1768247344544-46,Strings,Boyer Moore Algorithm for Pattern Searching,#,Amdocs,Medium,Pending
+import-1768247344545-47,Strings,Word Wrap,#,Microsoft,Medium,Pending
+import-1768247344545-48,2D Arrays,Zigzag (or diagonal) Traversal of Matrix,#,Amazon,Medium,Pending
+import-1768247344545-49,2D Arrays,Set Matrix Zeroes,#,Amazon Microsoft,Medium,Pending
+import-1768247344545-50,2D Arrays,Spiral Matrix,#,Flipkart Apple Societe Generale IQ,Medium,Pending
+import-1768247344545-51,2D Arrays,Rotate Image,#,Microsoft Paytm Samsung Adobe,Medium,Pending
+import-1768247344545-52,2D Arrays,Word Search,#,Google Ola Goldman Sachs IQ,Medium,Pending
+import-1768247344545-53,2D Arrays,Find the Number of Islands | Set 1 (Using DFS),#,Microsoft Uber Apple Amazon IQ,Medium,Pending
+import-1768247344545-54,2D Arrays,"Given a Matrix of â€˜Oâ€™ and â€˜Xâ€™, Replace â€˜Oâ€™ with â€˜Xâ€™ if Surrounded by â€˜Xâ€™",#,Google,Medium,Pending
+import-1768247344545-55,2D Arrays,Find a Common Element in all Rows of a Given Row-Wise Sorted Matrix,#,MAQ Software Microsoft VMWare,Medium,Pending
+import-1768247344545-56,2D Arrays,Create a Matrix with Alternating Rectangles of O and X,#,MAQ VMWare,Medium,Pending
+import-1768247344545-57,2D Arrays,Maximum Size Rectangle of all 1s,#,Amazon Microsoft,Medium,Pending
+import-1768247344545-58,Searching & Sorting,Permute Two Arrays such that Sum of Every Pair is Greater or Equal to K,#,Samsung,Medium,Pending
+import-1768247344545-59,Searching & Sorting,counting sort,#,Samsung Morgan Stanley Snapdeal EPAM Systems,Medium,Pending
+import-1768247344545-60,Searching & Sorting,find common elements three sorted arrays,#,MAQ Software Microsoft VMWare,Medium,Pending
+import-1768247344545-61,Searching & Sorting,Searching in an array where adjacent differ by at most k,#,TCS Amazon,Medium,Pending
+import-1768247344545-62,Searching & Sorting,ceiling in a sorted array,#,TCS,Medium,Pending
+import-1768247344545-63,Searching & Sorting,Piar with given difference,#,Amazon Visa,Medium,Pending
+import-1768247344545-64,Searching & Sorting,majority element,#,Amazon Google,Medium,Pending
+import-1768247344545-65,Searching & Sorting,count triplets with sum smaller that a given value,#,Amazon SAP Labs,Medium,Pending
+import-1768247344545-66,Searching & Sorting,Maximum Sum Subsequence with no adjacent elements,#,Amazon FactSet Oxigen Wallet OYO Rooms Paytm Walmart Yahoo Adobe Flipkart,Medium,Pending
+import-1768247344545-67,Searching & Sorting,Merge Sorted Arrays using O(1) Space,#,Amdocs Brocade Goldman Sachs Juniper Networks Linkedin Microsoft Quikr Snapdeal Synopsys Zoho Adobe,Medium,Pending
+import-1768247344545-68,Searching & Sorting,Inversion of Array,#,Adobe Amazon BankBazaar Flipkart Microsoft Myntra MakeMyTrip,Medium,Pending
+import-1768247344545-69,Searching & Sorting,Find Duplicates in O(n) Time and O(1) Extra Space,#,Amazon D-E-Shaw Flipkart Paytm Qualcomm Zoho,Medium,Pending
+import-1768247344545-70,Searching & Sorting,Radix Sort,#,Amazon Microsoft,Medium,Pending
+import-1768247344545-71,Searching & Sorting,Product of Array except itself,#,Accolite Amazon D-E-Shaw Intuit Morgan Stanley Opera Microsoft Flipkart,Medium,Pending
+import-1768247344545-72,Searching & Sorting,Make all Array Elements Equal,#,Amazon,Medium,Pending
+import-1768247344545-73,Searching & Sorting,Check if Reversing a Sub Array Make the Array Sorted,#,Amazon,Medium,Pending
+import-1768247344545-74,Searching & Sorting,Find Four Elements that Sum to a Given Value,#,Adobe Amazon Google Microsoft OYO Rooms,Medium,Pending
+import-1768247344545-75,Searching & Sorting,Median of Two Sorted Array with Different Size,#,Amazon Samsung Microsoft Google,Medium,Pending
+import-1768247344545-76,Searching & Sorting,Median of Stream of Integers Running Integers,#,Amazon Google,Medium,Pending
+import-1768247344545-77,Searching & Sorting,Print Subarrays with 0 Sum,#,Paytm Adobe,Medium,Pending
+import-1768247344545-78,Searching & Sorting,Aggressive Cows,#,Adobe,Medium,Pending
+import-1768247344545-79,Searching & Sorting,Allocate Minimum number of Pages,#,Google Infosys Codenation Amazon Microsoft,Medium,Pending
+import-1768247344545-80,Searching & Sorting,Minimum Swaps to Sort,#,Amazon Google,Medium,Pending
+import-1768247344545-81,Backtracking,Backtracking Set 2 Rat in a Maze,#,Microsoft Amazon,Medium,Pending
+import-1768247344545-82,Backtracking,Combinational Sum,#,Adobe Amazon Microsoft,Medium,Pending
+import-1768247344545-83,Backtracking,Crossword-Puzzle,#,Microsoft,Medium,Pending
+import-1768247344545-84,Backtracking,Longest Possible Route in a Matrix with Hurdles,#,Microsoft,Medium,Pending
+import-1768247344545-85,Backtracking,Printing all solutions in N-Queen Problem,#,Accolite Amazon Amdocs D-E-Shaw MAQ Software Twitter Visa Microsoft,Medium,Pending
+import-1768247344545-86,Backtracking,Solve the Sudoku,#,Amazon Directi Flipkart MakeMyTrip MAQ Software Microsoft Ola Cabs Oracle PayPal Zoho,Medium,Pending
+import-1768247344545-87,Backtracking,Partition Equal Subset Sum,#,Amazon Adobe Accolite Traveloka,Medium,Pending
+import-1768247344545-88,Backtracking,M Coloring Problem,#,Amazon,Medium,Pending
+import-1768247344545-89,Backtracking,Knight Tour,#,IBM,Medium,Pending
+import-1768247344545-90,Backtracking,Soduko,#,Amazon Adobe Accolite Traveloka,Medium,Pending
+import-1768247344545-91,Backtracking,Remove Invalid Parentheses,#,Uber,Medium,Pending
+import-1768247344545-92,Backtracking,Word Break Problem using Backtracking,#,,Medium,Pending
+import-1768247344545-93,Backtracking,Print all Palindromic Partitions of a String,#,Facebook Amazon Microsoft,Medium,Pending
+import-1768247344545-94,Backtracking,Find Shortest Safe Route in a Path with Landmines,#,Facebook Amazon Microsoft,Medium,Pending
+import-1768247344545-95,Backtracking,Partition of Set into K Subsets with Equal Sum,#,Amazon,Medium,Pending
+import-1768247344545-96,Backtracking,Backtracking set-7 hamiltonian cycle,#,Amazon,Medium,Pending
+import-1768247344545-97,Backtracking,tug-of-war,#,Google,Medium,Pending
+import-1768247344545-98,Backtracking,Maximum Possible Number by doing at most K swaps,#,Amazon Adobe Accolite Traveloka,Medium,Pending
+import-1768247344545-99,Backtracking,Backtracking set-8 solving cryptarithmetic puzzles,#,Goldman Sachs,Medium,Pending
+import-1768247344545-100,Backtracking,Find paths from corner cell to middle cell in maze,#,Meta,Medium,Pending
+import-1768247344545-101,Backtracking,Arithmetic Expressions,#,Flipkart,Medium,Pending
+import-1768247344545-102,Linked List,Reverse Linked List,#,Sprinklr,Medium,Pending
+import-1768247344545-103,Linked List,Linked List Cycle,#,Accolite Amazon D-E-Shaw Hike Lybrate Mahindra Comviva MakeMyTrip MAQ Software OYO Rooms Paytm Qualcomm Samsung SAP Labs Snapdeal Veritas VMWare Walmart Adobe,Medium,Pending
+import-1768247344545-104,Linked List,Merge Two Sorted Lists,#,Accolite Amazon Belzabar Brocade FactSet Flipkart MakeMyTrip Microsoft OATS Systems Oracle Samsung Synopsys Zoho,Medium,Pending
+import-1768247344545-105,Linked List,Delete without Head node,#,Amazon Goldman Sachs Kritikal Solutions Microsoft Samsung Visa,Medium,Pending
+import-1768247344545-106,Linked List,Remove duplicates from an unsorted linked list,#,Â AmazonÂ Intuit,Medium,Pending
+import-1768247344545-107,Linked List,Sort a linked list of 0s-1s-or-2s,#,Microsoft Amazon MakeMyTrip,Medium,Pending
+import-1768247344545-108,Linked List,Multiply two numbers represented linked lists,#,Amazon,Medium,Pending
+import-1768247344545-109,Linked List,Remove nth node from end of list,#,Accolite Adobe Amazon Citicorp Epic Systems FactSet Hike MAQ Software Monotype Solutions Morgan Stanley OYO Rooms Qualcomm Samsung Snapdeal Flipkart,Medium,Pending
+import-1768247344545-110,Linked List,Reorder List,#,Amazon Microsoft OYO Rooms Intuit,Medium,Pending
+import-1768247344545-111,Linked List,Detect and remove loop in a linked list,#,Accolite Amazon D-E-Shaw Hike Lybrate Mahindra Comviva MakeMyTrip MAQ Software OYO Rooms Paytm Qualcomm Samsung SAP Labs Snapdeal Veritas VMWare Walmart Adobe,Medium,Pending
+import-1768247344545-112,Linked List,Write a Function to get the Intersection Point of two Linked Lists,#,Amazon,Medium,Pending
+import-1768247344545-113,Linked List,Flatten a linked list with next and child pointers,#,Google,Medium,Pending
+import-1768247344545-114,Linked List,Linked list in zig-zag fashion,#,Micorsoft,Medium,Pending
+import-1768247344545-115,Linked List,Reverse a doubly linked list,#,Walmart,Medium,Pending
+import-1768247344545-116,Linked List,Delete nodes which have a greater value on right side,#,Amazon,Medium,Pending
+import-1768247344545-117,Linked List,Segregate even and odd Elements in a Linked List,#,Walmart,Medium,Pending
+import-1768247344545-118,Linked List,Point to next higher value node in a linked list with an Arbitrary Pointer,#,GeekyAnts,Medium,Pending
+import-1768247344545-119,Linked List,Rearrange a given linked list in place,#,Ola Uber,Medium,Pending
+import-1768247344545-120,Linked List,Sort Biotonic Doubly Linked Lists,#,Morgan Stanley,Medium,Pending
+import-1768247344545-121,Linked List,Merge K Sorted Lists,#,Microsoft Ola eBay,Medium,Pending
+import-1768247344545-122,Linked List,Merge sort for linked list,#,Accolite Adobe Amazon MAQ Software Microsoft Paytm Veritas,Medium,Pending
+import-1768247344545-123,Linked List,Quicksort on singly-linked list,#,Paytm,Medium,Pending
+import-1768247344545-124,Linked List,Sum of two linked lists,#,Accolite Amazon Flipkart MakeMyTrip Microsoft Morgan Stanley Qualcomm Snapdeal,Medium,Pending
+import-1768247344545-125,Linked List,Flattening a linked list,#,Â 24*7 Innovation LabsÂ AmazonÂ Drishti-SoftÂ FlipkartÂ Goldman SachsÂ MicrosoftÂ PaytmÂ PayuÂ QualcommÂ SnapdealÂ Visa,Medium,Pending
+import-1768247344545-126,Linked List,Clone a linked list with next and random Pointer,#,Triology,Medium,Pending
+import-1768247344545-127,Linked List,Subtract two numbers represented as linked lists,#,Amazon Goldman Sachs,Medium,Pending
+import-1768247344545-128,Linked List,P-129,#,,Medium,Pending
+import-1768247344545-129,Stacks & Queues,Implement two stacks in an Array,#,24*7 Innovation Labs Microsoft Samsung Snapdeal,Medium,Pending
+import-1768247344545-130,Stacks & Queues,Evaluation of Postfix Expression,#,Amazon Google Facebook,Medium,Pending
+import-1768247344545-131,Stacks & Queues,Implement Stack using Queues,#,Facebook,Medium,Pending
+import-1768247344545-132,Stacks & Queues,Queue Reversal,#,Amazon Morgain Stanley,Medium,Pending
+import-1768247344545-133,Stacks & Queues,Implement Stack Queue using Deque,#,Microsoft Atlassian,Medium,Pending
+import-1768247344545-134,Stacks & Queues,Reverse first k elements of queue,#,Microsoft Amdocs,Medium,Pending
+import-1768247344545-135,Stacks & Queues,Design Stack with Middle Operation,#,MaQ Software,Medium,Pending
+import-1768247344545-136,Stacks & Queues,Infix to Postfix,#,Amazon Samsung Paytm Vmware inc,Medium,Pending
+import-1768247344545-137,Stacks & Queues,Design and Implement Special stack,#,Amazon Google Microsoft Visa Goldman Sachs,Medium,Pending
+import-1768247344545-138,Stacks & Queues,Longest Valid String,#,Google Microsoft,Medium,Pending
+import-1768247344545-139,Stacks & Queues,Find if an expression has duplicate parenthesis or not,#,Flipkart Oracle OYO Rooms Snapdeal Walmart Yatra.com Microsoft Google,Medium,Pending
+import-1768247344545-140,Stacks & Queues,Stack permutations check if an array is stack permutation of other,#,Visa,Medium,Pending
+import-1768247344545-141,Stacks & Queues,Count natural numbers whose permutation greater number,#,Amazon,Medium,Pending
+import-1768247344545-142,Stacks & Queues,Sort a stack using Recursion,#,Amazon Goldman Sachs IBM Intuit Kuliza Yahoo Microsoft,Medium,Pending
+import-1768247344545-143,Stacks & Queues,Queue based approach for first non repeating character in a stream,#,Microsoft Flipkart,Medium,Pending
+import-1768247344545-144,Stacks & Queues,The Celebrity Problem,#,Google Visa Apple,Medium,Pending
+import-1768247344545-145,Stacks & Queues,Next larger Element,#,Visa,Medium,Pending
+import-1768247344545-146,Stacks & Queues,Distance of nearest cell,#,Flipkar Facebook,Medium,Pending
+import-1768247344545-147,Stacks & Queues,Rotten-oranges,#,Facebook,Medium,Pending
+import-1768247344545-148,Stacks & Queues,Next smaller element,#,Codenation,Medium,Pending
+import-1768247344545-149,Stacks & Queues,Circular-tour,#,Codenation Flipkart,Medium,Pending
+import-1768247344545-150,Stacks & Queues,Efficiently implement k-stacks single array,#,Flipkart,Medium,Pending
+import-1768247344545-152,Stacks & Queues,Iterative tower of hanoi,#,Microsoft Flipkart,Medium,Pending
+import-1768247344545-153,Stacks & Queues,Find the maximum of minimums for every window size in a given array,#,Amazon Microsoft Flipkart,Medium,Pending
+import-1768247344545-154,Stacks & Queues,lru cache implementation,#,Microsoft Uber Alibaba,Medium,Pending
+import-1768247344545-155,Stacks & Queues,Find a tour that visits all stations,#,Uber,Medium,Pending
+import-1768247344545-156,Greedy,Activity selection problem greedy algo,#,Facebook Morgan Stanley Flipkart,Medium,Pending
+import-1768247344545-157,Greedy,Greedy algorithm to find minimum number of coins,#,Accolite Amazon Morgan Stanley Oracle Paytm Samsung Snapdeal Synopsys Visa Microsoft Google,Medium,Pending
+import-1768247344545-158,Greedy,Minimum sum two numbers formed digits array-2,#,Google,Medium,Pending
+import-1768247344545-159,Greedy,Minimum sum absolute difference pairs two arrays,#,Amazon,Medium,Pending
+import-1768247344545-160,Greedy,Find maximum height pyramid from the given array of objects,#,Flipkart Amazon,Medium,Pending
+import-1768247344545-161,Greedy,Minimum cost for acquiring all coins with k extra coins allowed with every coin,#,,Medium,Pending
+import-1768247344545-162,Greedy,Find maximum equal sum of every three stacks,#,Microsoft Amazon Flipkart,Medium,Pending
+import-1768247344545-163,Greedy,Job sequencing problem,#,Microsoft Acolite,Medium,Pending
+import-1768247344545-164,Greedy,Greedy algorithm egyptian fraction,#,,Medium,Pending
+import-1768247344545-165,Greedy,Fractional knapsack problem,#,Microsoft,Medium,Pending
+import-1768247344545-166,Greedy,Maximum length chain of pairs,#,Amazon Microsoft,Medium,Pending
+import-1768247344545-167,Greedy,Find smallest number with given number of digits and digit sum,#,MAQ Software OYO Rooms,Medium,Pending
+import-1768247344545-168,Greedy,Maximize sum of consecutive differences circular-array,#,Maccafe,Medium,Pending
+import-1768247344545-169,Greedy,paper-cut minimum number squares,#,Google,Medium,Pending
+import-1768247344545-170,Greedy,Lexicographically smallest array-k consecutive swaps,#,Amazon,Medium,Pending
+import-1768247344545-171,Greedy,Problems-CHOCOLA,#,Flipkart,Medium,Pending
+import-1768247344545-172,Greedy,Find minimum time to finish all jobs with given constraints,#,,Medium,Pending
+import-1768247344545-173,Greedy,Job sequencing using disjoint set union,#,Samsung,Medium,Pending
+import-1768247344545-174,Greedy,Rearrange characters string such that no two adjacent are same,#,Amazon Microsoft,Medium,Pending
+import-1768247344545-175,Greedy,Minimum edges to reverse to make path from a source to a destination,#,,Medium,Pending
+import-1768247344545-176,Greedy,Minimize Cash Flow among a given set of friends who have borrowed money from each other,#,,Medium,Pending
+import-1768247344545-177,Greedy,Minimum Cost to cut a board into squares,#,Maccafe,Medium,Pending
+import-1768247344545-178,Binary Trees,Maximum Depth of Binary Tree,#,Amazon Cadence India CouponDunia D-E-Shaw FactSet FreeCharge MakeMyTrip,Medium,Pending
+import-1768247344545-179,Binary Trees,Reverse Level Order Traversal,#,Amazon Microsoft flipkart Adobe,Medium,Pending
+import-1768247344545-180,Binary Trees,Subtree of Another Tree,#,Amazon Microsoft Facebook,Medium,Pending
+import-1768247344545-181,Binary Trees,Invert Binary Tree,#,Amazon Hike,Medium,Pending
+import-1768247344545-182,Binary Trees,Binary Tree Level Order Traversal,#,Accolite Adobe Amazon Cisco D-E-Shaw Flipkart,Medium,Pending
+import-1768247344545-183,Binary Trees,Left View of Binary Tree,#,Microsoft Adobe Cisco Networking Academy,Medium,Pending
+import-1768247344545-184,Binary Trees,Right View of Binary Tree,#,Amdocs,Medium,Pending
+import-1768247344545-185,Binary Trees,ZigZag Tree Traversal,#,Amazon Cisco FactSet Hike Snapdeal Walmart Microsoft Flipkart,Medium,Pending
+import-1768247344545-186,Binary Trees,Create a mirror tree from the given binary tree,#,Accolite Adobe Amazon Belzabar EBay Goldman Sachs Microsoft Morgan Stanley Myntra Ola Cabs Paytm,Medium,Pending
+import-1768247344545-187,Binary Trees,Leaf at same level,#,Amazon,Medium,Pending
+import-1768247344545-188,Binary Trees,Check for Balanced Tree,#,Amazon Walmart Microsoft,Medium,Pending
+import-1768247344545-189,Binary Trees,Transform to Sum Tree,#,Amazon FactSet Microsoft Samsung Walmart,Medium,Pending
+import-1768247344545-190,Binary Trees,Check if Tree is Isomorphic,#,Amazon Microsoft,Medium,Pending
+import-1768247344545-191,Binary Trees,Same Tree,#,Amazon Microsoft Flipkart,Medium,Pending
+import-1768247344545-192,Binary Trees,Construct Binary Tree from Preorder and Inorder Traversal,#,Accolite Amazon Microsoft,Medium,Pending
+import-1768247344545-193,Binary Trees,Height of Binary Tree,#,Amazon Cadence India CouponDunia D-E-Shaw FactSet FreeCharge MakeMyTrip,Medium,Pending
+import-1768247344545-194,Binary Trees,Diameter of a Binary Tree,#,Amazon Microsoft OYO Rooms,Medium,Pending
+import-1768247344545-195,Binary Trees,Top View of Binary Tree,#,Microsoft Adobe Expedia Group,Medium,Pending
+import-1768247344545-196,Binary Trees,Bottom View of Binary Tree,#,DE Shaw India,Medium,Pending
+import-1768247344545-197,Binary Trees,Diagonal Traversal of Binary Tree,#,Amazon Microsoft,Medium,Pending
+import-1768247344545-198,Binary Trees,Boundary Traversal of binary tree,#,Accolite Amazon FactSet Hike Kritikal Solutions,Medium,Pending
+import-1768247344545-199,Binary Trees,Construct Binary Tree from String with Brackets,#,Microsoft Morgan Stanley OYO Rooms Payu Samsung Snapdeal Flipkart,Medium,Pending
+import-1768247344545-200,Binary Trees,Minimum swap required to convert binary tree to binary search tree,#,Adobe Amazon,Medium,Pending
+import-1768247344545-201,Binary Trees,Duplicate subtree in Binary Tree,#,Google,Medium,Pending
+import-1768247344545-202,Binary Trees,Check if a given graph is tree or not,#,Microsoft Amazon,Medium,Pending
+import-1768247344545-203,Binary Trees,Lowest Common Ancestor in a Binary Tree,#,Accolite Amazon American Express Cisco Expedia Flipkart MakeMyTrip Microsoft OYO Room,Medium,Pending
+import-1768247344545-204,Binary Trees,Min distance between two given nodes of a Binary Tree,#,Amazon Linkedin MakeMyTrip Ola Cabs Qualcomm Samsung,Medium,Pending
+import-1768247344545-205,Binary Trees,Duplicate Subtrees,#,Ola,Medium,Pending
+import-1768247344545-206,Binary Trees,Kth ancestor of a node in binary tree,#,Josh Technology Group,Medium,Pending
+import-1768247344545-207,Binary Trees,Binary Tree Maximum Path Sum,#,Samsung Facebook,Medium,Pending
+import-1768247344545-208,Binary Trees,Serialize and Deserialize Binary Tree,#,Flipkart InMobi Linkedin MAQ Software Microsoft Paytm Quikr Yahoo,Medium,Pending
+import-1768247344545-209,Binary Trees,Binary Tree to DLL,#,Accolite Amazon Goldman Sachs Microsoft Morgan Stanley Salesforce Snapdeal,Medium,Pending
+import-1768247344545-210,Binary Trees,Print all k-sum paths in a binary tree,#,Accolite Amazon Goldman Sachs,Medium,Pending
+import-1768247344545-211,Binary Search Trees,Lowest Common Ancestor of a Binary Search Tree,#,Accolite Amazon Flipkart MAQ Software Microsoft Samsung Synopsys,Medium,Pending
+import-1768247344545-212,Binary Search Trees,Binary Search Tree | Set 1 (Search and Insertion),#,Accolite Amazon Microsoft Paytm Samsung,Medium,Pending
+import-1768247344545-213,Binary Search Trees,Minimum element in BST,#,Microsoft,Medium,Pending
+import-1768247344545-214,Binary Search Trees,Predecessor and Successor,#,Google Adobe Goladman Sachs Direct,Medium,Pending
+import-1768247344545-215,Binary Search Trees,Check whether BST contains Dead End,#,Walmart,Medium,Pending
+import-1768247344545-216,Binary Search Trees,Binary Tree to BST,#,HSBC,Medium,Pending
+import-1768247344545-217,Binary Search Trees,Kth largest element in BST,#,Accolite Amazon Samsung SAP Labs Microsoft,Medium,Pending
+import-1768247344545-218,Binary Search Trees,Validate Binary Search Tree,#,OYO Rooms Qualcomm Samsung Snapdeal VMWare Walmart Wooker Amazon Facebook,Medium,Pending
+import-1768247344545-219,Binary Search Trees,Kth Smallest Element in a BST,#,Accolite Amazon Google,Medium,Pending
+import-1768247344545-220,Binary Search Trees,Delete Node in a BST,#,Adobe Barclays,Medium,Pending
+import-1768247344545-221,Binary Search Trees,Flatten BST to sorted list,#,Microsoft,Medium,Pending
+import-1768247344545-222,Binary Search Trees,Preorder to Postorder,#,Amazon Linkedin Flipkart,Medium,Pending
+import-1768247344545-223,Binary Search Trees,Count BST nodes that lie in a given range,#,D-E-Shaw Google,Medium,Pending
+import-1768247344545-224,Binary Search Trees,Populate Inorder Successor for all Nodes,#,Sap labs,Medium,Pending
+import-1768247344545-225,Binary Search Trees,Convert Normal BST to Balanced BST,#,Paytm,Medium,Pending
+import-1768247344545-226,Binary Search Trees,Merge two BSTs,#,DE Shaw India,Medium,Pending
+import-1768247344545-227,Binary Search Trees,"Given n appointments, find all conflicting appointments",#,Samsung,Medium,Pending
+import-1768247344545-228,Binary Search Trees,Replace every element,#,Samsung,Medium,Pending
+import-1768247344545-229,Binary Search Trees,Construct BST from given preorder traversal,#,Adobe Morgan Stanley Microsoft,Medium,Pending
+import-1768247344545-230,Binary Search Trees,Find median of BST in O(n) time and O(1) space,#,Amazon,Medium,Pending
+import-1768247344546-231,Binary Search Trees,Largest BST in a Binary Tree,#,Amazon D-E-Shaw Samsung Microsoft Flipkart,Medium,Pending
+import-1768247344546-232,Heaps & Hashing,Choose k array elements such that difference of maximum and minimum is minimized,#,,Medium,Pending
+import-1768247344546-233,Heaps & Hashing,Heap Sort,#,Adobe,Medium,Pending
+import-1768247344546-234,Heaps & Hashing,Top K Frequent Elements,#,Amazon Microsoft,Medium,Pending
+import-1768247344546-235,Heaps & Hashing,k largest elements in an array,#,Amazon Microsoft Walmart Adobe,Medium,Pending
+import-1768247344546-236,Heaps & Hashing,Next Greater Element,#,Amazon Microsoft Flipkart Adobe,Medium,Pending
+import-1768247344546-237,Heaps & Hashing,Kâ€™th Smallest/Largest Element in Unsorted Array,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Pending
+import-1768247344546-238,Heaps & Hashing,Find the maximum repeating number in O(n) time and O(1) extra space,#,Accolite Amazon,Medium,Pending
+import-1768247344546-239,Heaps & Hashing,K-th smallest element after removing some integers from natural numbers,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Pending
+import-1768247344546-240,Heaps & Hashing,Find k closest elements to a given value,#,Amazon OYO Rooms,Medium,Pending
+import-1768247344546-241,Heaps & Hashing,Kâ€™th largest element in a stream,#,Â AmazonÂ CiscoÂ HikeÂ OYO RoomsÂ WalmartÂ MicrosoftÂ Flipkart,Medium,Pending
+import-1768247344546-242,Heaps & Hashing,Connect Ropes,#,Amazoon Oyo Goldman Sachs,Medium,Pending
+import-1768247344546-243,Heaps & Hashing,Cuckoo Hashing,#,Amaxon,Medium,Pending
+import-1768247344546-244,Heaps & Hashing,Itinerary from a List of Tickets,#,Microsoft Ola eBay,Medium,Pending
+import-1768247344546-245,Heaps & Hashing,Largest Subarray with 0 Sum,#,Amazon MakeMyTrip Microsoft,Medium,Pending
+import-1768247344546-246,Heaps & Hashing,Count distinct elements in every window of size  k,#,Accolite Amazon Microsoft,Medium,Pending
+import-1768247344546-247,Heaps & Hashing,Group Shifted Strings,#,Oracle,Medium,Pending
+import-1768247344546-248,Heaps & Hashing,Merge K Sorted lists,#,Microsoft Ola eBay,Medium,Pending
+import-1768247344546-249,Heaps & Hashing,Find Median from Data Stream,#,Adobe Amazon Apple Belzabar D-E-Shaw Facebook Flipkart Google Intuit Microsoft Morgan Stanley Ola Cabs Oracle Samsung SAP Labs Yahoo,Medium,Pending
+import-1768247344546-250,Heaps & Hashing,Sliding Window Maximum,#,Amazon Directi Flipkart Microsoft Google,Medium,Pending
+import-1768247344546-251,Heaps & Hashing,Find the smallest positive number,#,Accolite Amazon Samsung Snapdeal,Medium,Pending
+import-1768247344546-252,Heaps & Hashing,Find Surpasser Count of each element in array,#,Amazon Morgan Stanley Ola Cabs SAP Labs,Medium,Pending
+import-1768247344546-253,Heaps & Hashing,Tournament Tree and Binary Heap,#,Amazon Ola Cabs Samsung Synopsys Walmart Microsoft,Medium,Pending
+import-1768247344546-254,Heaps & Hashing,Check for palindrome,#,Amazon Cisco D-E-Shaw Facebook FactSet Morgan Stanley Paytm Zoho,Medium,Pending
+import-1768247344546-255,Heaps & Hashing,Length of the largest subarray with contiguous elements,#,Amazon Intuit Microsoft,Medium,Pending
+import-1768247344546-256,Heaps & Hashing,Palindrome Substring Queries,#,Amazon Morgan Stanley Ola Cabs SAP Labs,Medium,Pending
+import-1768247344546-257,Heaps & Hashing,Subarray distinct elements,#,Microsoft Ola eBay,Medium,Pending
+import-1768247344546-258,Heaps & Hashing,Find the recurring function,#,MAQ Software,Medium,Pending
+import-1768247344546-259,Heaps & Hashing,K maximum sum combinations from two arrays,#,Amazon,Medium,Pending
+import-1768247344546-260,Graphs,BFS,#,Samsung Delhivery SAP Labs,Medium,Pending
+import-1768247344546-261,Graphs,DFS,#,Samsung Intuit Goldman Sachs,Medium,Pending
+import-1768247344546-262,Graphs,Flood Fill Algorithm,#,Google Adobe Apple,Medium,Pending
+import-1768247344546-263,Graphs,Number of Triangles,#,IBM,Medium,Pending
+import-1768247344546-264,Graphs,Detect cycle in a graph,#,Lenksart,Medium,Pending
+import-1768247344546-265,Graphs,Detect cycle in an undirected graph,#,Samsung,Medium,Pending
+import-1768247344546-266,Graphs,Rat in a Maze Problem,#,Sharechat Directi,Medium,Pending
+import-1768247344546-267,Graphs,Steps by Knight,#,Samsung,Medium,Pending
+import-1768247344546-268,Graphs,Clone graph,#,Google MAQ Software Apple Facebook,Medium,Pending
+import-1768247344546-269,Graphs,Number of Operations to Make Network Connected,#,Samsung,Medium,Pending
+import-1768247344546-270,Graphs,Dijkstraâ€™s shortest path algorithm,#,Amazon,Medium,Pending
+import-1768247344546-271,Graphs,Topological Sort,#,Amazon Google Flipkart Oyo Fipkart Samsung,Medium,Pending
+import-1768247344546-272,Graphs,Oliver and the Game,#,Sharechat Directi,Medium,Pending
+import-1768247344546-273,Graphs,Minimum time taken by each job to be completed given by a Directed Acyclic Graph,#,Amazon,Medium,Pending
+import-1768247344546-274,Graphs,Find whether it is possible to finish all tasks or not from given dependencies,#,Directi Sharechat,Medium,Pending
+import-1768247344546-275,Graphs,Find the number of islands,#,Razorpay,Medium,Pending
+import-1768247344546-276,Graphs,Prim's Algo,#,Visa,Medium,Pending
+import-1768247344546-277,Graphs,Negative Weighted Cycle,#,Amazon,Medium,Pending
+import-1768247344546-278,Graphs,Floyd Warshall,#,Google Uber,Medium,Pending
+import-1768247344546-279,Graphs,Graph Coloring,#,Morgan Stanley,Medium,Pending
+import-1768247344546-280,Graphs,Snakes and Ladders,#,Goldman Sachs Makemytrip,Medium,Pending
+import-1768247344546-281,Graphs,Kosaraju's Theorem,#,Paytm,Medium,Pending
+import-1768247344546-282,Graphs,Journey to moon,#,Lenksart Payload,Medium,Pending
+import-1768247344546-283,Graphs,Vertex Cover,#,Intuit,Medium,Pending
+import-1768247344546-284,Graphs,M Coloring Problem,#,Uber,Medium,Pending
+import-1768247344546-285,Graphs,Cheapest Flights Within K Stops,#,Uber Paypal,Medium,Pending
+import-1768247344546-286,Graphs,Find if there is a path of more than k length from a source,#,Cisco Intuit,Medium,Pending
+import-1768247344546-287,Graphs,Bellman Ford,#,Sharechat Directi,Medium,Pending
+import-1768247344546-288,Graphs,Bipartitie Graph,#,Microsoft Flipkart,Medium,Pending
+import-1768247344546-289,Graphs,Word-Ladder,#,Microsoft,Medium,Pending
+import-1768247344546-290,Graphs,Allen Dictionary,#,Samsung,Medium,Pending
+import-1768247344546-291,Graphs,Kruskals MST,#,Amazon Cisco Samsung,Medium,Pending
+import-1768247344546-292,Graphs,Total number spanning trees graph,#,Amazon Cisco Samsung Microsoft Flipkart,Medium,Pending
+import-1768247344546-293,Graphs,Travelling Salesman,#,Google Microsoft Opera,Medium,Pending
+import-1768247344546-294,Graphs,Find longest path directed acyclic graph,#,Google,Medium,Pending
+import-1768247344546-295,Graphs,Two Clique Problem,#,Microsoft,Medium,Pending
+import-1768247344546-296,Graphs,Minimise the cash flow,#,Intuit Uber,Medium,Pending
+import-1768247344546-297,Graphs,Chinese postman,#,Intuit,Medium,Pending
+import-1768247344546-298,Graphs,Water Jug,#,Intuit Uber,Medium,Pending
+import-1768247344546-299,Graphs,Water Jug 2,#,MakeMyTrip MAQ Software,Medium,Pending
+import-1768247344546-300,Tries,Construct a trie from scratch,#,Â AccoliteÂ AmazonÂ D-E-ShawÂ FactSetÂ Microsoft,Medium,Pending
+import-1768247344546-301,Tries,Print unique rows in a given boolean matrix,#,Amazon Zoho,Medium,Pending
+import-1768247344546-302,Tries,Word Break Problem | (Trie solution),#,Amazon Google Hike IBM MAQ Software Microsoft Walmart Zoho,Medium,Pending
+import-1768247344546-303,Tries,"Given a sequence of words, print all anagrams together",#,Amazon D-E-Shaw Goldman Sachs Morgan Stanley Snapdeal Microsoft,Medium,Pending
+import-1768247344546-304,Tries,Find shortest unique prefix for every word in a given list,#,Microsoft Google,Medium,Pending
+import-1768247344546-305,Tries,Implement a Phone Directory,#,Amazon Microsoft Snapdeal,Medium,Pending
+import-1768247344546-306,DP,Knapsack with Duplicate Items,#,Amazon,Medium,Pending
+import-1768247344546-307,DP,BBT counter,#,Microsoft,Medium,Pending
+import-1768247344546-308,DP,Reach a given score,#,Samsung,Medium,Pending
+import-1768247344546-309,DP,Maximum difference of zeros and ones in binary string,#,Ola,Medium,Pending
+import-1768247344546-310,DP,Climbing Stairs,#,Intuit,Medium,Pending
+import-1768247344546-311,DP,Permutation Coefficient,#,Amazon,Medium,Pending
+import-1768247344546-312,DP,Longest Repeating Subsequence,#,Google Amazon,Medium,Pending
+import-1768247344546-313,DP,Pairs with specific difference,#,Ola,Medium,Pending
+import-1768247344546-314,DP,Longest subsequence-1,#,Amazon,Medium,Pending
+import-1768247344546-315,DP,Coin Change,#,Microsoft Samsung Barclays Apple Adobe,Medium,Pending
+import-1768247344546-316,DP,LIS,#,Amazon Google Facebook Fidelity International,Medium,Pending
+import-1768247344546-317,DP,Longest Common Subsequence,#,Siemens Amazon Google,Medium,Pending
+import-1768247344546-318,DP,Word Break,#,Amazon Google Microsoft Walmart Apple IBM,Medium,Pending
+import-1768247344546-319,DP,Combination Sum IV,#,Adobe Amazon Microsoft,Medium,Pending
+import-1768247344546-320,DP,House Robber,#,Apple Uber,Medium,Pending
+import-1768247344546-321,DP,Houe Robber 2,#,Arrays Dynamic Programming,Medium,Pending
+import-1768247344546-322,DP,Decode Ways,#,Adobe Uber,Medium,Pending
+import-1768247344546-323,DP,Unique Paths,#,Google Microsoft,Medium,Pending
+import-1768247344546-324,DP,Jumps Game,#,Facebook Amazon Microsoft Google,Medium,Pending
+import-1768247344546-325,DP,Knapsack Problem,#,Amazon Directi Flipkart GreyOrange Microsoft Mobicip Morgan Stanley Oracle Payu Snapdeal Visa,Medium,Pending
+import-1768247344546-326,DP,nCr,#,Google,Medium,Pending
+import-1768247344546-327,DP,Catalan Number,#,Amazon Google,Medium,Pending
+import-1768247344546-328,DP,Edit Distance,#,Google Goldman Sachs Citrix,Medium,Pending
+import-1768247344546-329,DP,Subset Sum,#,Amazon Google,Medium,Pending
+import-1768247344546-330,DP,Gold mine,#,Samsung,Medium,Pending
+import-1768247344546-331,DP,Assembly Line Scheduling,#,Goldman Sachs,Medium,Pending
+import-1768247344546-332,DP,Maximize The Cut Segments,#,Amazon OYO Rooms Microsoft,Medium,Pending
+import-1768247344546-333,DP,Maximum sum increasing subsequence,#,Amazon Morgan Stanley Microsoft,Medium,Pending
+import-1768247344546-334,DP,Count all subsequences having product less than K,#,Goldman Sachs,Medium,Pending
+import-1768247344546-336,DP,Egg dropping puzzle,#,Amazon D-E-Shaw Goldman Sachs Google Hike MakeMyTrip MAQ Software Myntra Nearbuy Opera Oracle Philips Samsung Service Now Unisys VMWare Microsoft,Medium,Pending
+import-1768247344546-337,DP,Max length chain,#,Amazon Microsoft,Medium,Pending
+import-1768247344546-338,DP,Largest Square in Matrix,#,Amazon Samsung,Medium,Pending
+import-1768247344546-339,DP,Maximum Path Sum,#,Amazon Microsoft Oyo Directi,Medium,Pending
+import-1768247344546-340,DP,Minimum Number of Jumps,#,Adobe Amazon Housing.com Moonfrog Labs Walmart Microsoft Google Flipkart,Medium,Pending
+import-1768247344546-341,DP,Minimum removals from array to make max â€“ min <= K,#,Amazon,Medium,Pending
+import-1768247344546-342,DP,Longest Common Substring,#,Webarch Club,Medium,Pending
+import-1768247344546-343,DP,Partition Equal Subset Sum,#,Amazon Accolite Traveloca Adobe,Medium,Pending
+import-1768247344546-344,DP,Longest Palindromic Subsequnce,#,Amazon Google,Medium,Pending
+import-1768247344546-345,DP,Count Palindromic Subsequences,#,Myntra,Medium,Pending
+import-1768247344546-346,DP,Longest Palindromic Substring,#,Amazon Microsoft Samsung Visa,Medium,Pending
+import-1768247344546-347,DP,Longest Alternating Sequence,#,Ola,Medium,Pending
+import-1768247344546-348,DP,Weighted Job Scheduling,#,Intuit,Medium,Pending
+import-1768247344546-349,DP,Coin Game,#,Salesforce,Medium,Pending
+import-1768247344546-350,DP,Coin Game Winner,#,Ola,Medium,Pending
+import-1768247344546-351,DP,Optimal Strategy for a game,#,Google IBM,Medium,Pending
+import-1768247344546-352,DP,Word Wrap,#,Microsoft,Medium,Pending
+import-1768247344546-353,DP,Mobile numeric keypad,#,Amazon Microsoft,Medium,Pending
+import-1768247344546-354,DP,Maximum Length of Pair Chain,#,Amazon Microsoft,Medium,Pending
+import-1768247344546-355,DP,Matrix Chain Multiplication,#,Walmart Flipkart,Medium,Pending
+import-1768247344546-356,DP,Maximum profit by buying and selling a share at most twice,#,Accolite Amazon Microsoft,Medium,Pending
+import-1768247344546-357,DP,Optimal BST,#,Google,Medium,Pending
+import-1768247344546-358,DP,Largest Submatrix with sum 0,#,Amazon MakeMyTrip Microsoft,Medium,Pending
+import-1768247344546-359,DP,Largest area rectangular sub-matrix with equal number of 1â€™s and 0â€™s,#,Amazon Directi Intuit MakeMyTrip Microsoft Samsung Google Flipkart,Medium,Pending
+import-1768247344546-360,Bit Manipulation,Count set bits in an integer,#,Adobe Apple,Medium,Pending
+import-1768247344546-361,Bit Manipulation,Find the two non-repeating elements in an array of repeating elements,#,Accolite Amazon FactSet Google MakeMyTrip Microsoft Qualcomm Samsung,Medium,Pending
+import-1768247344546-362,Bit Manipulation,Program to find whether a no is power of two,#,Adobe,Medium,Pending
+import-1768247344546-363,Bit Manipulation,Find position of the only set bit,#,Microsoft,Medium,Pending
+import-1768247344546-364,Bit Manipulation,Count number of bits to be flipped to convert A to B,#,Maq Software,Medium,Pending
+import-1768247344546-365,Bit Manipulation,Count total set bits in all numbers from 1 to n,#,Microsoft,Medium,Pending
+import-1768247344546-366,Bit Manipulation,Copy set bits in a range,#,Facebook,Medium,Pending
+import-1768247344546-367,Bit Manipulation,"Calculate square of a number without using *, / and pow()",#,Amazon,Medium,Pending
+import-1768247344546-368,Bit Manipulation,"Divide two integers without using multiplication, division and mod operator",#,Microsoft,Medium,Pending
+import-1768247344546-369,Bit Manipulation,Power Set,#,Google Adobe Paytm,Medium,Pending
+import-1768247344546-370,Segment Trees,Range Sum Query - Immutable,#,,Medium,Pending
+import-1768247344546-371,Segment Trees,Range Minimum Query,#,Google Interview Qs,Medium,Pending
+import-1768247344546-372,Segment Trees,Range Sum Query - Mutable,#,Alibaba,Medium,Pending
+import-1768247344546-373,Segment Trees,Create Sorted Array through Instructions,#,Samsung Accolite,Medium,Pending
+import-1768247344546-374,Segment Trees,Count of Range Sum,#,Walmart,Medium,Pending
+import-1768247344546-375,Segment Trees,Count of Smaller Numbers After Self,#,Codenation Google,Medium,Pending
