@@ -4,7 +4,7 @@ def-2,Arrays,Reverse the Array,https://www.geeksforgeeks.org/write-a-program-to-
 def-3,Arrays,Maximum Subarray (Kadane's),https://leetcode.com/problems/maximum-subarray/,Facebook Microsoft,Medium,Pending
 import-1768247344544-0,Arrays,Maximum and Minimum Element in an Array,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Done
 import-1768247344544-2,Arrays,Maximum-Subarray,#,Microsoft Facebook Interview Qs,Medium,Pending
-import-1768247344544-3,Arrays,Contains Duplicate,#,Amazon Interview Qs,Medium,Pending
+import-1768247344544-3,Arrays,Contains Duplicate,#,Amazon Interview Qs,Medium,Done
 import-1768247344544-4,Arrays,Chocolate Distribution Problem,#,Amazon Interview Qs,Medium,Pending
 import-1768247344544-5,Arrays,Search in Rotated Sorted Array,#,Microsoft Google Adobe Amazon D-E-Shaw Flipkart Hike Intuit MakeMyTrip Paytm,Medium,Pending
 import-1768247344544-6,Arrays,Next Permutation,#,Uber Goldman Sachs Adobe Interview Qs,Medium,Pending
@@ -27,7 +27,7 @@ import-1768247344544-22,Arrays,Space Optimization Using Bit Manipulations,#,Amaz
 import-1768247344544-23,Arrays,Subarray Sum Divisible K,#,Snapdeal Microsoft,Medium,Pending
 import-1768247344544-24,Arrays,Print all Possible Combinations of r Elements in a Given Array of Size n,#,Amazon,Medium,Pending
 import-1768247344544-25,Arrays,Mo's Algorithm,#,Microsoft,Medium,Pending
-import-1768247344544-26,Strings,Valid Palindrome,#,Amazon Cisco D-E-Shaw Facebook FactSet Morgan Stanley Paytm Zoho,Medium,Pending
+import-1768247344544-26,Strings,Valid Palindrome,#,Amazon Cisco D-E-Shaw Facebook FactSet Morgan Stanley Paytm Zoho,Medium,Done
 import-1768247344544-27,Strings,Valid Anagram,#,Nagarro Media.net Directi Google Adobe Flipkart,Medium,Pending
 import-1768247344544-28,Strings,Valid parentheses,#,Google Interview Qs,Medium,Pending
 import-1768247344544-29,Strings,Remove Consecutive Characters,#,Samsung Adobe,Medium,Pending
@@ -375,3 +375,4 @@ import-1768247344546-372,Segment Trees,Range Sum Query - Mutable,#,Alibaba,Mediu
 import-1768247344546-373,Segment Trees,Create Sorted Array through Instructions,#,Samsung Accolite,Medium,Pending
 import-1768247344546-374,Segment Trees,Count of Range Sum,#,Walmart,Medium,Pending
 import-1768247344546-375,Segment Trees,Count of Smaller Numbers After Self,#,Codenation Google,Medium,Pending
+import-1768457636462-0,Graphs,DFS of Graph,https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1,,Medium,Done
