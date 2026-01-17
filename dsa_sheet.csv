@@ -1,9 +1,9 @@
 "ID",Category,Question,Problem Link,Companies,Difficulty,Status
 def-1,Arrays,Maximum and Minimum Element,https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/,Amazon Google Microsoft,Easy,Done
 def-2,Arrays,Reverse the Array,https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/,Infosys,Easy,Done
-def-3,Arrays,Maximum Subarray (Kadane's),https://leetcode.com/problems/maximum-subarray/,Facebook Microsoft,Medium,Pending
+def-3,Arrays,Maximum Subarray (Kadane's),https://leetcode.com/problems/maximum-subarray/,Facebook Microsoft,Medium,Done
 import-1768247344544-0,Arrays,Maximum and Minimum Element in an Array,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Done
-import-1768247344544-2,Arrays,Maximum-Subarray,#,Microsoft Facebook Interview Qs,Medium,Pending
+import-1768247344544-2,Arrays,Maximum-Subarray,#,Microsoft Facebook Interview Qs,Medium,Done
 import-1768247344544-3,Arrays,Contains Duplicate,#,Amazon Interview Qs,Medium,Done
 import-1768247344544-4,Arrays,Chocolate Distribution Problem,#,Amazon Interview Qs,Medium,Pending
 import-1768247344544-5,Arrays,Search in Rotated Sorted Array,#,Microsoft Google Adobe Amazon D-E-Shaw Flipkart Hike Intuit MakeMyTrip Paytm,Medium,Pending
