@@ -116,7 +116,7 @@ import-1768247344545-111,Linked List,Detect and remove loop in a linked list,#,A
 import-1768247344545-112,Linked List,Write a Function to get the Intersection Point of two Linked Lists,#,Amazon,Medium,Pending
 import-1768247344545-113,Linked List,Flatten a linked list with next and child pointers,#,Google,Medium,Pending
 import-1768247344545-114,Linked List,Linked list in zig-zag fashion,#,Micorsoft,Medium,Pending
-import-1768247344545-115,Linked List,Reverse a doubly linked list,#,Walmart,Medium,Pending
+import-1768247344545-115,Linked List,Reverse a doubly linked list,#,Walmart,Medium,Done
 import-1768247344545-116,Linked List,Delete nodes which have a greater value on right side,#,Amazon,Medium,Pending
 import-1768247344545-117,Linked List,Segregate even and odd Elements in a Linked List,#,Walmart,Medium,Pending
 import-1768247344545-118,Linked List,Point to next higher value node in a linked list with an Arbitrary Pointer,#,GeekyAnts,Medium,Pending
@@ -126,7 +126,7 @@ import-1768247344545-121,Linked List,Merge K Sorted Lists,#,Microsoft Ola eBay,M
 import-1768247344545-122,Linked List,Merge sort for linked list,#,Accolite Adobe Amazon MAQ Software Microsoft Paytm Veritas,Medium,Pending
 import-1768247344545-123,Linked List,Quicksort on singly-linked list,#,Paytm,Medium,Pending
 import-1768247344545-124,Linked List,Sum of two linked lists,#,Accolite Amazon Flipkart MakeMyTrip Microsoft Morgan Stanley Qualcomm Snapdeal,Medium,Pending
-import-1768247344545-125,Linked List,Flattening a linked list,#,Â 24*7 Innovation LabsÂ AmazonÂ Drishti-SoftÂ FlipkartÂ Goldman SachsÂ MicrosoftÂ PaytmÂ PayuÂ QualcommÂ SnapdealÂ Visa,Medium,Pending
+import-1768247344545-125,Linked List,Flattening a linked list,#,Â 24*7 Innovation LabsÂ AmazonÂ Drishti-SoftÂ FlipkartÂ Goldman SachsÂ MicrosoftÂ PaytmÂ PayuÂ QualcommÂ SnapdealÂ Visa,Medium,Done
 import-1768247344545-126,Linked List,Clone a linked list with next and random Pointer,#,Triology,Medium,Pending
 import-1768247344545-127,Linked List,Subtract two numbers represented as linked lists,#,Amazon Goldman Sachs,Medium,Pending
 import-1768247344545-128,Linked List,P-129,#,,Medium,Pending
