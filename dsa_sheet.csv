@@ -117,8 +117,8 @@ import-1768247344545-112,Linked List,Write a Function to get the Intersection Po
 import-1768247344545-113,Linked List,Flatten a linked list with next and child pointers,#,Google,Medium,Done
 import-1768247344545-114,Linked List,Linked list in zig-zag fashion,#,Micorsoft,Medium,Done
 import-1768247344545-115,Linked List,Reverse a doubly linked list,#,Walmart,Medium,Done
-import-1768247344545-116,Linked List,Delete nodes which have a greater value on right side,#,Amazon,Medium,Pending
-import-1768247344545-117,Linked List,Segregate even and odd Elements in a Linked List,#,Walmart,Medium,Pending
+import-1768247344545-116,Linked List,Delete nodes which have a greater value on right side,#,Amazon,Medium,Done
+import-1768247344545-117,Linked List,Segregate even and odd Elements in a Linked List,#,Walmart,Medium,Done
 import-1768247344545-118,Linked List,Point to next higher value node in a linked list with an Arbitrary Pointer,#,GeekyAnts,Medium,Pending
 import-1768247344545-119,Linked List,Rearrange a given linked list in place,#,Ola Uber,Medium,Done
 import-1768247344545-120,Linked List,Sort Biotonic Doubly Linked Lists,#,Morgan Stanley,Medium,Done
