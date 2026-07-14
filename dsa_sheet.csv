@@ -167,13 +167,13 @@ import-1768247344545-163,Greedy,Job sequencing problem,#,Microsoft Acolite,Mediu
 import-1768247344545-164,Greedy,Greedy algorithm egyptian fraction,#,,Medium,Done
 import-1768247344545-165,Greedy,Fractional knapsack problem,#,Microsoft,Medium,Pending
 import-1768247344545-166,Greedy,Maximum length chain of pairs,#,Amazon Microsoft,Medium,Done
-import-1768247344545-167,Greedy,Find smallest number with given number of digits and digit sum,#,MAQ Software OYO Rooms,Medium,Done
+import-1768247344545-167,Greedy,Find smallest number with given number of digits and digit sum,#,MAQ Software OYO Rooms,Medium,Pending
 import-1768247344545-168,Greedy,Maximize sum of consecutive differences circular-array,#,Maccafe,Medium,Pending
 import-1768247344545-169,Greedy,paper-cut minimum number squares,#,Google,Medium,Pending
 import-1768247344545-170,Greedy,Lexicographically smallest array-k consecutive swaps,#,Amazon,Medium,Pending
 import-1768247344545-171,Greedy,Problems-CHOCOLA,#,Flipkart,Medium,Done
 import-1768247344545-172,Greedy,Find minimum time to finish all jobs with given constraints,#,,Medium,Done
-import-1768247344545-173,Greedy,Job sequencing using disjoint set union,#,Samsung,Medium,Done
+import-1768247344545-173,Greedy,Job sequencing using disjoint set union,#,Samsung,Medium,Pending
 import-1768247344545-174,Greedy,Rearrange characters string such that no two adjacent are same,#,Amazon Microsoft,Medium,Pending
 import-1768247344545-175,Greedy,Minimum edges to reverse to make path from a source to a destination,#,,Medium,Pending
 import-1768247344545-176,Greedy,Minimize Cash Flow among a given set of friends who have borrowed money from each other,#,,Medium,Pending
@@ -216,7 +216,7 @@ import-1768247344545-212,Binary Search Trees,Binary Search Tree | Set 1 (Search 
 import-1768247344545-213,Binary Search Trees,Minimum element in BST,#,Microsoft,Medium,Pending
 import-1768247344545-214,Binary Search Trees,Predecessor and Successor,#,Google Adobe Goladman Sachs Direct,Medium,Pending
 import-1768247344545-215,Binary Search Trees,Check whether BST contains Dead End,#,Walmart,Medium,Pending
-import-1768247344545-216,Binary Search Trees,Binary Tree to BST,#,HSBC,Medium,Pending
+import-1768247344545-216,Binary Search Trees,Binary Tree to BST,#,HSBC,Medium,Done
 import-1768247344545-217,Binary Search Trees,Kth largest element in BST,#,Accolite Amazon Samsung SAP Labs Microsoft,Medium,Pending
 import-1768247344545-218,Binary Search Trees,Validate Binary Search Tree,#,OYO Rooms Qualcomm Samsung Snapdeal VMWare Walmart Wooker Amazon Facebook,Medium,Pending
 import-1768247344545-219,Binary Search Trees,Kth Smallest Element in a BST,#,Accolite Amazon Google,Medium,Pending
