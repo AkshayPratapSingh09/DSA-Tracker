@@ -37,8 +37,8 @@ import-1768247344544-32,Strings,Print all the Duplicates in the Input String,#,O
 import-1768247344544-33,Strings,Longest Substring without Repeating Characters,#,Morgan Stanley Amazon IQ,Medium,Done
 import-1768247344544-34,Strings,Longest Repeating Character Replacement,#,Amazon Google,Medium,Done
 import-1768247344544-35,Strings,Group Anagrams,#,Samsung Adobe Amazon Interview Qs,Medium,Done
-import-1768247344544-36,Strings,Longest Palindromic Substring,#,Microsoft Google Samsung Visa IQ,Medium,Done
-import-1768247344544-37,Strings,Palindromic Substrings,#,Microsoft IQ,Medium,Done
+import-1768247344544-36,Strings,Longest Palindromic Substring,#,Microsoft Google Samsung Visa IQ,Medium,Pending
+import-1768247344544-37,Strings,Palindromic Substrings,#,Microsoft IQ,Medium,Pending
 import-1768247344544-38,Strings,Next Permutation,#,Adobe Goldman Sachs Uber,Medium,Done
 import-1768247344544-39,Strings,Count Palindromic Subsequences,#,Myntra Interview Qs,Medium,Done
 import-1768247344544-40,Strings,Smallest Window in a String Containing all the Characters of Another String,#,Microsoft Amazon IQ,Medium,Done
@@ -55,8 +55,8 @@ import-1768247344545-50,2D Arrays,Spiral Matrix,#,Flipkart Apple Societe General
 import-1768247344545-51,2D Arrays,Rotate Image,#,Microsoft Paytm Samsung Adobe,Medium,Done
 import-1768247344545-52,2D Arrays,Word Search,#,Google Ola Goldman Sachs IQ,Medium,Done
 import-1768247344545-53,2D Arrays,Find the Number of Islands | Set 1 (Using DFS),#,Microsoft Uber Apple Amazon IQ,Medium,Done
-import-1768247344545-54,2D Arrays,"Given a Matrix of â€˜Oâ€™ and â€˜Xâ€™, Replace â€˜Oâ€™ with â€˜Xâ€™ if Surrounded by â€˜Xâ€™",#,Google,Medium,Done
-import-1768247344545-55,2D Arrays,Find a Common Element in all Rows of a Given Row-Wise Sorted Matrix,#,MAQ Software Microsoft VMWare,Medium,Done
+import-1768247344545-54,2D Arrays,"Given a Matrix of â€˜Oâ€™ and â€˜Xâ€™, Replace â€˜Oâ€™ with â€˜Xâ€™ if Surrounded by â€˜Xâ€™",#,Google,Medium,Pending
+import-1768247344545-55,2D Arrays,Find a Common Element in all Rows of a Given Row-Wise Sorted Matrix,#,MAQ Software Microsoft VMWare,Medium,Pending
 import-1768247344545-56,2D Arrays,Create a Matrix with Alternating Rectangles of O and X,#,MAQ VMWare,Medium,Done
 import-1768247344545-57,2D Arrays,Maximum Size Rectangle of all 1s,#,Amazon Microsoft,Medium,Done
 import-1768247344545-58,Searching & Sorting,Permute Two Arrays such that Sum of Every Pair is Greater or Equal to K,#,Samsung,Medium,Done
