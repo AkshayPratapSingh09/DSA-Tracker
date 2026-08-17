@@ -1,5 +1,5 @@
 "ID",Category,Question,Problem Link,Companies,Difficulty,Status
-def-1,Arrays,Maximum and Minimum Element,https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/,Amazon Google Microsoft,Easy,Pending
+def-1,Arrays,Maximum and Minimum Element,https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/,Amazon Google Microsoft,Easy,Done
 def-2,Arrays,Reverse the Array,https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/,Infosys,Easy,Done
 def-3,Arrays,Maximum Subarray (Kadane's),https://leetcode.com/problems/maximum-subarray/,Facebook Microsoft,Medium,Pending
 import-1768247344544-0,Arrays,Maximum and Minimum Element in an Array,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Done
