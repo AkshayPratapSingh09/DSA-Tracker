@@ -1,6 +1,6 @@
 "ID",Category,Question,Problem Link,Companies,Difficulty,Status
 def-1,Arrays,Maximum and Minimum Element,https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/,Amazon Google Microsoft,Easy,Done
-def-2,Arrays,Reverse the Array,https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/,Infosys,Easy,Pending
+def-2,Arrays,Reverse the Array,https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/,Infosys,Easy,Done
 def-3,Arrays,Maximum Subarray (Kadane's),https://leetcode.com/problems/maximum-subarray/,Facebook Microsoft,Medium,Done
 import-1768247344544-0,Arrays,Maximum and Minimum Element in an Array,#,ABCO Accolite Amazon Cisco Hike Microsoft Snapdeal VMWare Google Adobe,Medium,Done
 import-1768247344544-2,Arrays,Maximum-Subarray,#,Microsoft Facebook Interview Qs,Medium,Done
@@ -29,7 +29,7 @@ import-1768247344544-24,Arrays,Print all Possible Combinations of r Elements in 
 import-1768247344544-25,Arrays,Mo's Algorithm,#,Microsoft,Medium,Done
 import-1768247344544-26,Strings,Valid Palindrome,#,Amazon Cisco D-E-Shaw Facebook FactSet Morgan Stanley Paytm Zoho,Medium,Done
 import-1768247344544-27,Strings,Valid Anagram,#,Nagarro Media.net Directi Google Adobe Flipkart,Medium,Done
-import-1768247344544-28,Strings,Valid parentheses,#,Google Interview Qs,Medium,Pending
+import-1768247344544-28,Strings,Valid parentheses,#,Google Interview Qs,Medium,Done
 import-1768247344544-29,Strings,Remove Consecutive Characters,#,Samsung Adobe,Medium,Done
 import-1768247344544-30,Strings,Longest Common Prefix,#,Adobe Grofers Dunzo Interview Qs,Medium,Done
 import-1768247344544-31,Strings,Convert a Sentence into its Equivalent Mobile Numeric Keypad Sequence,#,Adobe,Medium,Done
